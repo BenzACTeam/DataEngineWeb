@@ -6,14 +6,18 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent }   from './dashboard.component';
 import { DetailComponent }   from './detail.component';
+import { CreateCaseComponent }   from './create-case.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+import {ListCaseComponent} from "./list-case.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    DetailComponent
+    DetailComponent,
+    CreateCaseComponent,
+    ListCaseComponent
   ],
   imports: [
     BrowserModule,

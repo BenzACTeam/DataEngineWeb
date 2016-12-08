@@ -5,7 +5,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: '#inbox-wrapper',
+  selector: 'content',
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {

@@ -5,7 +5,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: '#iview-mail-wrapper',
+  selector: 'content',
   templateUrl: './detail.component.html'
 })
 export class DetailComponent {

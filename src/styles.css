@@ -513,8 +513,7 @@ canvas {
 }
 
 .sidebar .nav-pills {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .sidebar .nav-pills > li > a {
@@ -635,6 +634,14 @@ canvas {
   color: #B3B8C3;
 }
 
+.sidebar-left .sidebar-btn {
+  margin: 15px;
+}
+
+.sidebar-left a.btn-primary.btn {
+  background-color: #00a2e2;
+}
+
 .sidebar-left a:focus,
 .sidebar-left a:hover {
   color: #fff;
@@ -680,6 +687,18 @@ canvas {
 .sidebar-left .nav-sub li.open > a {
   color: #fff;
   background-color: transparent;
+}
+
+.sidebar-left .nav-pills > li {
+  margin-top: 0;
+}
+
+.sidebar-left .nav-pills > li > a {
+  display: block;
+  border-bottom: 1px solid #3a494e;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
 }
 
 .sidebar + .main-content-wrapper {
@@ -3993,8 +4012,28 @@ label.valid {
 .view-mail-wrapper .view-mail-reply {
 }
 
-.view-mail-wrapper .view-mail-reply p {
+.view-mail-reply p {
   margin-bottom: 0;
+}
+
+.view-detail header {
+  margin-bottom: 20px;
+}
+
+.view-detail img {
+  margin-right: 10px;
+}
+
+.view-detail strong {
+  font-weight: normal;
+}
+
+.view-detail small {
+  margin-left: 10px;
+}
+
+.view-mail-reply .btn-info {
+  background-color: #00a2e2;
 }
 
 .view-mail-wrapper .view-mail-reply .btn-info {
@@ -4028,9 +4067,6 @@ label.valid {
 
 .view-mail-wrapper .view-mail-body .panel-body .label {
   margin-right: 8px;
-  border: 1px solid #1c4e81;
-  background-color: transparent;
-  color: #1c4e81;
   font-weight: normal;
   width: 120px;
   display: inline-block;
@@ -4227,7 +4263,7 @@ label.valid {
 }
 
 .theme-default .sidebar-left {
-  background-color: #1d212a;
+  background-color: #2b3a41;
 }
 
 .theme-default .sidebar-mini .sidebar-left .nav > li > a:focus.active,
@@ -4236,7 +4272,8 @@ label.valid {
 .theme-default .sidebar-left .nav > li > a:focus.active,
 .theme-default .sidebar-left .nav > li > a:hover.active {
   color: #fff;
-  background-color: #27b6af;
+  background-color: #222d31;
+  border-left: 6px solid #00a2e3;
 }
 
 .theme-default .sidebar-left .nav > li.open > a,
@@ -4261,7 +4298,8 @@ label.valid {
 .theme-default .sidebar-left .nav > li > a:focus.active,
 .theme-default .sidebar-left .nav > li > a:hover.active {
   color: #fff;
-  background-color: #27b6af;
+  background-color: #222d31;
+  border-left: 6px solid #00a2e3;
 }
 
 .theme-default.sidebar-mini .sidebar-left .nav > li.nav-dropdown-open > a,

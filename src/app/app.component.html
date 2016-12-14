@@ -79,94 +79,29 @@
   </header>
 
   <aside class="sidebar sidebar-left">
-    <div class="sidebar-profile">
-      <div class="avatar">
-        <img class="img-circle profile-image" src="assets/profile.jpg" alt="profile">
-        <i class="on border-dark animated bounceIn"></i>
-      </div>
-      <div class="profile-body dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Admin<span class="caret"></span></h4></a>
-        <small class="title">Front-end Developer</small>
-        <ul class="dropdown-menu animated fadeInRight" role="menu">
-          <li class="profile-progress">
-            <h5>
-              <span>80%</span>
-              <small>Profile complete</small>
-            </h5>
-            <div class="progress progress-xs">
-              <div class="progress-bar progress-bar-primary" style="width: 80%">
-              </div>
-            </div>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="javascript:void(0);">
-                                <span class="icon"><i class="fa fa-user"></i>
-                                </span>My Account</a>
-          </li>
-          <li>
-            <a href="javascript:void(0);">
-                                <span class="icon"><i class="fa fa-envelope"></i>
-                                </span>Messages</a>
-          </li>
-          <li>
-            <a href="javascript:void(0);">
-                                <span class="icon"><i class="fa fa-cog"></i>
-                                </span>Settings</a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="javascript:void(0);">
-                                <span class="icon"><i class="fa fa-sign-out"></i>
-                                </span>Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
     <nav>
-      <h5 class="sidebar-header">Navigation</h5>
       <ul class="nav nav-pills nav-stacked">
         <li>
           <a routerLink="/dashboard" routerLinkActive="active">
-            <i class="fa  fa-fw fa-tachometer"></i> Dashboard
+            <i class="fa  fa-fw fa-home"></i> Home
           </a>
         </li>
         <li>
           <a routerLink="/listcase" routerLinkActive="active">
-            <i class="fa  fa-fw fa-desktop"></i> Case List
+            <i class="fa  fa-fw fa-navicon"></i> Case List
           </a>
         </li>
         <li>
           <a routerLink="/createcase" routerLinkActive="active">
-            <i class="fa  fa-fw fa-desktop"></i> Create Case
+            <i class="fa  fa-fw fa-navicon"></i> Create Case
           </a>
         </li>
       </ul>
     </nav>
-    <h5 class="sidebar-header">Account Settings</h5>
-    <div class="setting-list">
-      <div class="row">
-        <div class="col-xs-8">
-          <label for="check1" class="control-label">Share your status</label>
-        </div>
-        <div class="col-xs-4">
-          <input type="checkbox" class="js-switch" checked="" id="check1" data-switchery="true"
-                 style="display: none;"><span class="switchery switchery-small"
-                                              style="background-color: rgb(39, 182, 175); border-color: rgb(39, 182, 175); box-shadow: rgb(39, 182, 175) 0px 0px 0px 10px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"><small
-          style="left: 13px; background-color: rgb(255, 255, 255); transition: left 0.2s;"></small></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <label for="check2" class="control-label">Push Notifications</label>
-        </div>
-        <div class="col-xs-4">
-          <input type="checkbox" class="js-switch" id="check2" data-switchery="true" style="display: none;"><span
-          class="switchery switchery-small"
-          style="box-shadow: rgb(179, 184, 195) 0px 0px 0px 0px inset; border-color: rgb(179, 184, 195); background-color: rgb(179, 184, 195); transition: border 0.4s, box-shadow 0.4s;"><small
-          style="left: 0px; background-color: rgb(255, 255, 255); transition: left 0.2s;"></small></span>
-        </div>
-      </div>
+    <div class="sidebar-btn">
+      <a routerLink="/createcase" class="btn btn-primary btn-block">
+        <span class="fa fa-plus" aria-hidden="true"></span> Create Case
+      </a>
     </div>
   </aside>
 

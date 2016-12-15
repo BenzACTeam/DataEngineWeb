@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 import {SiteCase} from "./case"
 
 @Injectable()
-export class UserCaseService {
+export class UseCaseService {
   private headers = new Headers({'Content-Type': 'application/json'});
   private caseListUrl = '';  // URL to web api
 

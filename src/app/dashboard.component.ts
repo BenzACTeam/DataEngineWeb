@@ -4,7 +4,7 @@
 
 import {Component, OnInit} from '@angular/core';
 import {SiteCase} from "./case";
-import {UserCaseService} from './user-case.service';
+import {UseCaseService} from './use-case.service';
 
 @Component({
   selector: 'content',
@@ -22,7 +22,7 @@ export class DashboardComponent {
 
   ]
 
-  constructor(private useCaseSercice: UserCaseService) {
+  constructor(private useCaseSercice: UseCaseService) {
 
   }
 

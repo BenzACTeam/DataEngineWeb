@@ -64,16 +64,16 @@
                 </a>
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Adam Larbert</h4>
-                <small>Design & Development</small>
+                <h4 class="media-heading">{{case.author}}</h4>
+                <small>{{case.sort}}</small>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="view-mail-reply pull-right">
-              <button class="btn btn-sm btn-info">Clone</button>
+              <button class="btn btn-sm btn-info">clone</button>
               <a class="btn" routerLink="/detail" href="#" role="button">
-                <p>2287</p><i class="fa fa-eye"></i>
+                <p>{{case.see}}</p><i class="fa fa-eye"></i>
               </a>
             </div>
           </div>
@@ -82,24 +82,24 @@
         <div class="row">
           <div class="col-md-12">
             <div class="panel view-mail-body">
-              <div class="panel-heading">Panel heading without title</div>
+              <div class="panel-heading">{{case.title}}</div>
               <div class="panel-body">
                 <p>
-                  <span class="label label-danger">Business Value:</span>test
+                  <span class="label label-danger">Business Value:</span>{{case.b_value}}
                 </p>
                 <p>
-                  <span class="label label-warning">Business Scenario:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                  <span class="label label-warning">Business Scenario:</span>{{case.b_scenrio}}
                 </p>
                 <p>
-                  <span class="label label-primary">Business Result:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                  <span class="label label-primary">Business Result:</span>{{case.b_resurt}}
                 </p>
-                <p>Reference: <small>This line of text is meant to be treated as fine print.</small></p>
+                <p>Reference: <small>{{case.reference}}</small></p>
               </div>
               <div class="panel-footer">
-                <span class="help-block"><i class="fa fa-clock-o"></i> 2016-12-14 14:15</span>
-                <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share</a>
+                <span class="help-block"><i class="fa fa-clock-o"></i> {{case.date}}</span>
+                <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like {{case.like}}</a>
+                <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment {{case.comment}}</a>
+                <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share {{case.share}}</a>
               </div>
             </div>
           </div>

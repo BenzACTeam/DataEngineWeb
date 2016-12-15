@@ -1,15 +1,8 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Create Case</h3>
-        <div class="actions pull-right">
-          <i class="fa fa-expand"></i>
-          <i class="fa fa-chevron-down"></i>
-          <i class="fa fa-times"></i>
-        </div>
-      </div>
-      <div class="panel-body">
+
+      <div class="panel-body editview">
         <form class="form-horizontal form-border" id="form" novalidate="novalidate">
           <div class="form-group">
             <label class="col-sm-3 control-label">Subject</label>
@@ -108,21 +101,17 @@
               <input type="text" class="form-control" name="input13" id="input13" required="" placeholder="">
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Reference</label>
-            <div class="col-sm-6">
 
-            </div>
-          </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">I need help</label>
+            <label class="col-sm-3 control-label col-ineedhelp"><i class="fa fa-hourglass-o" aria-hidden="true"></i>
+              I need help</label>
             <div class="col-sm-6">
               <textarea class="form-control"></textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-info btn-lg">Submit</button>
             </div>
           </div>
         </form>

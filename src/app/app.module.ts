@@ -10,6 +10,7 @@ import { CreateCaseComponent }   from './create-case.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 import {ListCaseComponent} from "./list-case.component";
+import {UserCaseService} from './user-case.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {ListCaseComponent} from "./list-case.component";
     AppRoutingModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UserCaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,5 +9,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './create-case.component.html'
 })
 export class CreateCaseComponent {
-
 }

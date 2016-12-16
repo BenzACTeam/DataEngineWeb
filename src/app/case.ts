@@ -2,7 +2,7 @@
 
 export class SiteCase {
   constructor(
-    public id: number,
+    public id: string,
     public sort:string,
     public author:string,
     public author_img:string,

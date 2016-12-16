@@ -9,13 +9,15 @@ import { DashboardComponent }   from './dashboard.component';
 import { DetailComponent }   from './detail.component';
 import {CreateCaseComponent} from "./create-case.component";
 import {ListCaseComponent} from "./list-case.component";
+import {TestComponent} from "./test";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'detail',  component: DetailComponent },
   { path: 'createcase',  component: CreateCaseComponent },
-  { path: 'listcase',  component: ListCaseComponent }
+  { path: 'listcase',  component: ListCaseComponent },
+  { path: 'test',  component: TestComponent },
 ];
 
 @NgModule({

@@ -93,7 +93,10 @@
                 <p>
                   <span class="label label-primary">Business Result:</span>{{case.b_resurt}}
                 </p>
-                <p>Reference: <small>{{case.reference}}</small></p>
+
+                  Reference:
+                <abbr title="{{case.reference}}" class="initialism">{{case.reference}}</abbr>
+
               </div>
               <div class="panel-footer">
                 <span class="help-block"><i class="fa fa-clock-o"></i> {{case.date}}</span>

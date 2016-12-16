@@ -11,6 +11,7 @@ import { CreateCaseComponent }   from './create-case.component';
 import { AppRoutingModule }     from './app-routing.module';
 import {ListCaseComponent} from "./list-case.component";
 import {UseCaseService} from './use-case.service';
+import {TestComponent} from "./test";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {UseCaseService} from './use-case.service';
     DashboardComponent,
     DetailComponent,
     CreateCaseComponent,
-    ListCaseComponent
+    ListCaseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

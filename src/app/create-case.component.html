@@ -2,103 +2,128 @@
   <div class="col-xs-12">
     <div class="panel panel-default">
 
-      <div class="panel-body editview">
-        <form class="form-horizontal form-border" id="form" novalidate="novalidate">
+      <div class="panel-body editview" [hidden]="submitted">
+
+        <form class="form-horizontal form-border" id="form" novalidate="novalidate" *ngIf="active"
+              (ngSubmit)="onSubmit()" #siteForm="ngForm">
           <div class="form-group">
             <label class="col-sm-3 control-label">Subject</label>
             <div class="col-sm-6">
-              <input type="text" class="form-control" name="input1" id="input1" required="" placeholder="">
+              <input type="text" class="form-control" id="input1"
+
+                     required
+                     [(ngModel)]="model.subject" name="subject"
+                     #name="ngModel"
+              >
+              <div [hidden]="name.valid || name.pristine"
+                   class="alert alert-danger">
+                Subject is necessary
+              </div>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Value</label>
             <div class="col-sm-6">
-              <select class="form-control">
-                <option value="">Increase business revenue</option>
-                <option value="">Optimize business eficiency</option>
+              <select class="form-control "
+                      required
+                      [(ngModel)]="model.value" name="value"
+                      style="background: url('http://ourjs.github.io/static/2015/arrow.png') no-repeat scroll right center transparent;">
+                <option *ngFor="let val of values" [value]="val">{{val}}</option>
+
               </select>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Business Scenario</label>
             <div class="col-sm-6">
-              <textarea class="form-control"></textarea>
+              <textarea class="form-control" [(ngModel)]="model.b_scenario" name="b_scenario"></textarea>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Result</label>
             <div class="col-sm-6">
-              <textarea class="form-control"></textarea>
+              <textarea class="form-control" [(ngModel)]="model.result" name="result"></textarea>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Source</label>
             <div class="col-sm-6">
-              <select class="form-control">
-                <option value="">CDM</option>
-                <option value="">DMS</option>
-                <option value="">Data Layer</option>
-                <option value="">LMS</option>
+              <select class="form-control"
+                      required
+                      [(ngModel)]="model.data_source" name="data_source"
+              >
+                <option *ngFor="let d_source of data_Sources" [value]="d_source">{{d_source}}</option>
+
               </select>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Type Description</label>
             <div class="col-sm-6">
-              <textarea class="form-control"></textarea>
+              <textarea class="form-control" [(ngModel)]="model.data_type_description"
+                        name="data_type_description"></textarea>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Analysis Model</label>
             <div class="col-sm-6">
-              <select class="form-control">
-                <option value="">C4.5</option>
-                <option value="">K-means</option>
-                <option value="">Support vector machines</option>
-                <option value="">Apriori</option>
-                <option value="">EM</option>
-                <option value="">PageRank</option>
-                <option value="">AdaBoost</option>
-                <option value="">kNN</option>
-                <option value="">Naive Bayes</option>
-                <option value="">CART</option>
+              <select class="form-control"
+                      [(ngModel)]="model.data_analysis_model" name="data_analysis_model"
+              >
+                <option *ngFor="let d_a_model of data_Analysis_Models" [value]="d_a_model">{{d_a_model}}</option>
+
               </select>
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Analysis Method Descrption</label>
+            <div class="col-sm-6">
+              <textarea class="form-control" [(ngModel)]="model.analysis_method_descrption"
+                        name="analysis_method_descrption"></textarea>
+            </div>
+          </div>
+
           <div class="form-group">
             <label class="col-sm-3 control-label">Contribution BU</label>
             <div class="col-sm-6">
-              <select class="form-control">
-                <option value="">Sales</option>
-                <option value="">After sales</option>
-                <option value="">Marketing</option>
+              <select class="form-control"
+                      [(ngModel)]="model.contribution_bu" name="contribution_bu"
+              >
+                <option *ngFor="let c_bu of contribution_BU_S" [value]="c_bu">{{c_bu}}</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Stage</label>
             <div class="col-sm-6">
-              <select class="form-control">
-                <option value="">SalIdea generation</option>
-                <option value="">Analysis</option>
-                <option value="">Validation</option>
-                <option value="">Implementationes</option>
+              <select class="form-control"
+                      [(ngModel)]="model.stage" name="stage"
+              >
+                <option *ngFor="let stage of stages" [value]="stage">{{stage}}</option>
+
               </select>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Time Frame</label>
             <div class="col-sm-3">
-              <input type="password" class="form-control " name="input7" id="input7" required="" placeholder="">
+              <input type="text" class="form-control " required="" placeholder=""
+                     [(ngModel)]="model.start_time" name="start_time"
+              >
             </div>
             <div class="col-sm-3">
-              <input type="password" class="form-control " required="" name="input8" id="input8" placeholder="">
+              <input type="text" class="form-control " required="" placeholder=""
+                     [(ngModel)]="model.end_time" name="end_time"
+              >
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Contact</label>
             <div class="col-sm-6">
-              <input type="text" class="form-control" name="input13" id="input13" required="" placeholder="">
+              <input type="text" class="form-control" required="" placeholder=""
+                     [(ngModel)]="model.contact" name="contact"
+              >
             </div>
           </div>
 
@@ -106,14 +131,17 @@
             <label class="col-sm-3 control-label col-ineedhelp"><i class="fa fa-hourglass-o" aria-hidden="true"></i>
               I need help</label>
             <div class="col-sm-6">
-              <textarea class="form-control"></textarea>
+              <textarea class="form-control" [(ngModel)]="model.i_need_help" name="i_need_help"
+              ></textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
-              <button type="submit" class="btn btn-info btn-lg">Submit</button>
+              <button type="submit" class="btn btn-info btn-lg"
+                      [disabled]="siteForm.form.valid">Submit</button>
             </div>
           </div>
+          {{submitJson}}
         </form>
       </div>
     </div>

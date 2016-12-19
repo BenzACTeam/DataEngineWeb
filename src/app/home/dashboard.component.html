@@ -1,4 +1,5 @@
 <div class="row">
+
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="panel panel-solid-info widget-mini">
       <div class="panel-body">
@@ -64,16 +65,16 @@
                 </a>
               </div>
               <div class="media-body">
-                <h4 class="media-heading">{{case.author}}</h4>
-                <small>{{case.sort}}</small>
+                <h4 class="media-heading">{{case.subject}}</h4>
+                <small>{{case.scenario}}</small>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="view-mail-reply pull-right">
               <button class="btn btn-sm btn-info">clone</button>
-              <a class="btn" routerLink="/detail" href="#" role="button">
-                <p>{{case.see}}</p><i class="fa fa-eye"></i>
+              <a class="btn" [routerLink]="[ '/detail', { caseId: case.id}]" routerL href="#" role="button"  >
+                <p>{{case.id}}</p><i class="fa fa-eye"></i>
               </a>
             </div>
           </div>
@@ -85,17 +86,17 @@
               <div class="panel-heading">{{case.title}}</div>
               <div class="panel-body">
                 <p>
-                  <span class="label label-danger">Business Value:</span>{{case.b_value}}
+                  <span class="label label-danger">Business Value:</span>{{case.value}}
                 </p>
                 <p>
-                  <span class="label label-warning">Business Scenario:</span>{{case.b_scenrio}}
+                  <span class="label label-warning">Business Scenario:</span>{{case.scenario}}
                 </p>
                 <p>
-                  <span class="label label-primary">Business Result:</span>{{case.b_resurt}}
+                  <span class="label label-primary">Business Result:</span>{{case.result}}
                 </p>
 
                   Reference:
-                <abbr title="{{case.reference}}" class="initialism">{{case.reference}}</abbr>
+                <abbr title="{{case.reference}}" class="initialism">{{case.contributionBU}}</abbr>
 
               </div>
               <div class="panel-footer">

@@ -5,11 +5,11 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent }   from './dashboard.component';
-import { DetailComponent }   from './detail.component';
-import {CreateCaseComponent} from "./create-case.component";
-import {ListCaseComponent} from "./list-case.component";
-import {TestComponent} from "./test";
+import { DashboardComponent }   from './home/dashboard.component';
+import { DetailComponent }   from './case/detail/detail.component';
+import {CreateCaseComponent} from "./case/create/create-case.component";
+import {ListCaseComponent} from "./case/list-case.component";
+import {TestComponent} from "./test/test";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

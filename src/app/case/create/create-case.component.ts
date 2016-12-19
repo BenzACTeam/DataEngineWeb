@@ -4,6 +4,7 @@
 
 import {Component, OnInit} from '@angular/core';
 import {CreateCase} from "./create-case";
+import {UseCaseService} from '../use-case.service';
 
 
 @Component({
@@ -11,6 +12,9 @@ import {CreateCase} from "./create-case";
   templateUrl: './create-case.component.html'
 })
 export class CreateCaseComponent {
+
+
+
   values = ["", 'Increase business revenue', 'Optimize business eficiency'];
   data_Sources = ["", 'CDM', 'DMS', 'Data Layer', 'LMS'];
   data_Analysis_Models = ['','C4.5', 'K-means', 'Support vector machines', 'Apriori',
@@ -19,15 +23,18 @@ export class CreateCaseComponent {
   stages=['','SalIdea generation','Analysis','Validation','Implementationes'];
 
   submitted = false;
-  model = new CreateCase("id", 'Subject', this.values[0], 'Business Scenario', 'result', this.data_Sources[0],
+  model = new CreateCase('Subject', this.values[0], 'Business Scenario','result', this.data_Sources[0],
     'data_type_description',this.data_Analysis_Models[0], "Analysis Method Descrption", this.contribution_BU_S[0],
     this.stages[0], "2010-10-12","2016-12-12",'console',' I need help');
 
+  constructor(private useCaseSercice: UseCaseService) {
 
+  }
   onSubmit() {
      // this.submitted = true;
+    // this.useCaseSercice.getCaseList().then(cases => this.cases = cases);
+    // alert(JSON.stringify(this.model));
 
-    alert(JSON.stringify(this.model));
   }
 
   // TODO: 完成后移除

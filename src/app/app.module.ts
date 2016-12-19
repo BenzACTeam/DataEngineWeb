@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent }   from './dashboard.component';
-import { DetailComponent }   from './detail.component';
-import { CreateCaseComponent }   from './create-case.component';
+import { DashboardComponent }   from './home/dashboard.component';
+import { DetailComponent }   from './case/detail/detail.component';
+import { CreateCaseComponent }   from './case/create/create-case.component';
 
 import { AppRoutingModule }     from './app-routing.module';
-import {ListCaseComponent} from "./list-case.component";
-import {UseCaseService} from './use-case.service';
-import {TestComponent} from "./test";
+import {ListCaseComponent} from "./case/list-case.component";
+import {UseCaseService} from './case/use-case.service';
+import {TestComponent} from "./test/test";
 
 @NgModule({
   declarations: [

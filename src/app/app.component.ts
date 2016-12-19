@@ -6,13 +6,13 @@ import { Site } from './menu';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = '站点列表';
   menu = [
 
-    new Site(2, 'Google',"listcase"),
-    new Site(3, 'Taobao',"dashboard"),
-    new Site(4, 'Facebook',"createcase")
+    new Site(1, 'Home',"dashboard"),
+    new Site(1, 'Case List',"listcase"),
+    new Site(2, 'Create Case',"createcase"),
+    new Site(2, 'Detail',"detail"),
+    new Site(2, 'Test',"test")
   ];
-
   mySite = this.menu[0];
 }

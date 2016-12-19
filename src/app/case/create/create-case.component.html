@@ -36,7 +36,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Business Scenario</label>
             <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.b_scenario" name="b_scenario"></textarea>
+              <textarea class="form-control" [(ngModel)]="model.scenario" name="b_scenario"></textarea>
             </div>
           </div>
           <div class="form-group">
@@ -50,7 +50,7 @@
             <div class="col-sm-6">
               <select class="form-control"
                       required
-                      [(ngModel)]="model.data_source" name="data_source"
+                      [(ngModel)]="model.dataSource" name="data_source"
               >
                 <option *ngFor="let d_source of data_Sources" [value]="d_source">{{d_source}}</option>
 
@@ -60,7 +60,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Type Description</label>
             <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.data_type_description"
+              <textarea class="form-control" [(ngModel)]="model.dataTypeDescription"
                         name="data_type_description"></textarea>
             </div>
           </div>
@@ -68,7 +68,7 @@
             <label class="col-sm-3 control-label">Data Analysis Model</label>
             <div class="col-sm-6">
               <select class="form-control"
-                      [(ngModel)]="model.data_analysis_model" name="data_analysis_model"
+                      [(ngModel)]="model.analysisModel" name="data_analysis_model"
               >
                 <option *ngFor="let d_a_model of data_Analysis_Models" [value]="d_a_model">{{d_a_model}}</option>
 
@@ -79,7 +79,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Analysis Method Descrption</label>
             <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.analysis_method_descrption"
+              <textarea class="form-control" [(ngModel)]="model.analysisMethodDescrption"
                         name="analysis_method_descrption"></textarea>
             </div>
           </div>
@@ -88,7 +88,7 @@
             <label class="col-sm-3 control-label">Contribution BU</label>
             <div class="col-sm-6">
               <select class="form-control"
-                      [(ngModel)]="model.contribution_bu" name="contribution_bu"
+                      [(ngModel)]="model.contributionBU" name="contribution_bu"
               >
                 <option *ngFor="let c_bu of contribution_BU_S" [value]="c_bu">{{c_bu}}</option>
               </select>
@@ -109,12 +109,12 @@
             <label class="col-sm-3 control-label">Time Frame</label>
             <div class="col-sm-3">
               <input type="text" class="form-control " required="" placeholder=""
-                     [(ngModel)]="model.start_time" name="start_time"
+                     [(ngModel)]="model.fromDate" name="start_time"
               >
             </div>
             <div class="col-sm-3">
               <input type="text" class="form-control " required="" placeholder=""
-                     [(ngModel)]="model.end_time" name="end_time"
+                     [(ngModel)]="model.toDate" name="end_time"
               >
             </div>
           </div>
@@ -131,7 +131,7 @@
             <label class="col-sm-3 control-label col-ineedhelp"><i class="fa fa-hourglass-o" aria-hidden="true"></i>
               I need help</label>
             <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.i_need_help" name="i_need_help"
+              <textarea class="form-control" [(ngModel)]="model.help" name="i_need_help"
               ></textarea>
             </div>
           </div>

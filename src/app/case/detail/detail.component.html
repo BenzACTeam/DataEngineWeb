@@ -3,12 +3,12 @@
     <div class="panel view-detail">
       <div class="panel-body">
         <header>
-          <h2>{{cases.title}}</h2>
+          <h2>{{cases.id}}</h2>
         </header>
         <div class="row view-mail-header">
           <div class="col-md-8 ">
             <img src="assets/avatar5.png" alt="" class="img-circle" width="50" height="50">
-            <strong><a href="#">{{cases.author}}</a></strong>
+            <strong><a href="#">{{cases.id}}</a></strong>
             <small>
               <i class="fa fa-clock-o"></i> {{cases.date}}</small>
           </div>
@@ -33,13 +33,13 @@
 
                       <div class="panel-body">
                         <p>
-                          <span class="label label-danger ">Business Value:</span>{{cases.b_value}}
+                          <span class="label label-danger ">Business Value:</span>{{cases.value}}
                         </p>
                         <p>
-                          <span class="label label-warning">Business Scenario:</span>{{cases.b_scenrio}}
+                          <span class="label label-warning">Business Scenario:</span>{{cases.scenario}}
                         </p>
                         <p>
-                          <span class="label label-primary">Business Result:</span>{{cases.b_resurt}}
+                          <span class="label label-primary">Business Result:</span>{{cases.result}}
                         </p>
 
                       </div>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="col-md-12 column">
                         Reference:
-                        <abbr title="{{cases.reference}}" class="initialism">{{cases.reference}}</abbr>
+                        <abbr title="{{cases.dataSource}}" class="initialism">{{cases.dataSource}}</abbr>
                       </div>
                       <div class="panel-footer">
                         <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like {{cases.like}}</a>

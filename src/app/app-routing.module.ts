@@ -14,7 +14,7 @@ import {TestComponent} from "./test/test";
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'detail',  component: DetailComponent },
+  { path: 'detail/:id',  component: DetailComponent },
   { path: 'createcase',  component: CreateCaseComponent },
   { path: 'listcase',  component: ListCaseComponent },
   { path: 'test',  component: TestComponent },

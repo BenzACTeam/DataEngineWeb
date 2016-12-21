@@ -1,5 +1,5 @@
 
-export class Site {
+export class M {
   constructor(
     public id: number,
     public name: string,

@@ -1,28 +1,23 @@
+
+import { NgModule } from '@angular/core'
+
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { FileUploadModule } from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
-import { DashboardComponent }   from './home/dashboard.component';
-import { DetailComponent }   from './case/detail/detail.component';
-import { CreateCaseComponent }   from './case/create/create-case.component';
-
 import { AppRoutingModule }     from './app-routing.module';
-import {ListCaseComponent} from "./case/list-case.component";
-import {UseCaseService} from './case/use-case.service';
-import {TestComponent} from "./test/test";
+import {FullLayoutComponent} from "./layouts/full-layout.component";
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    DetailComponent,
-    CreateCaseComponent,
-    ListCaseComponent,
-    TestComponent
+    FullLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +27,10 @@ import {TestComponent} from "./test/test";
     FileUploadModule
 
   ],
-  providers: [UseCaseService],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

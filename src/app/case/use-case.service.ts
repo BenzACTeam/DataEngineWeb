@@ -6,7 +6,7 @@ import { Injectable }    from '@angular/core';
 import {Headers, Http, ResponseContentType, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { SiteCase} from "../dashboard/case"
+import {SiteCase} from "../home/case"
 import any = jasmine.any;
 
 @Injectable()

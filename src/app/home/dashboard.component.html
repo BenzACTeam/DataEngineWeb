@@ -54,8 +54,7 @@
 <div class="row">
   <div class="col-xs-12">
 
-    <div class="panel view-mail-wrapper" ngFor="let case of cases">
-
+    <div class="panel view-mail-wrapper" *ngFor="let case of cases">
       <div class="panel-body">
         <div class="row view-mail-header">
           <div class="col-md-8 ">
@@ -74,7 +73,7 @@
           <div class="col-md-4">
             <div class="view-mail-reply pull-right">
               <button class="btn btn-sm btn-info">clone</button>
-              <a class="btn" [routerLink]="[ '/detail',case.id]" routerLinkActive="active" href="#" role="button"  >
+              <a class="btn" [routerLink]="[ '/detail', { caseId: case.id}]" routerL href="#" role="button"  >
                 <p>{{case.id}}</p><i class="fa fa-eye"></i>
               </a>
             </div>

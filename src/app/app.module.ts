@@ -1,36 +1,41 @@
-
-import { NgModule } from '@angular/core'
-
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { FileUploadModule } from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
-import { AppRoutingModule }     from './app-routing.module';
-import {FullLayoutComponent} from "./layouts/full-layout.component";
+import { DashboardComponent }   from './home/dashboard.component';
+import { DetailComponent }   from './case/detail/detail.component';
+import { CreateCaseComponent }   from './case/create/create-case.component';
 
+import { AppRoutingModule }     from './app-routing.module';
+import {ListCaseComponent} from "./case/list-case.component";
+import {UseCaseService} from './case/use-case.service';
+import {TestComponent} from "./test/test";
+//noinspection TypeScriptCheckImport
+import { SelectModule }  from 'ng2-select';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullLayoutComponent
+    DashboardComponent,
+    DetailComponent,
+    CreateCaseComponent,
+    ListCaseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpModule,
-    FileUploadModule
-
+    FileUploadModule,
+    SelectModule
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [UseCaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

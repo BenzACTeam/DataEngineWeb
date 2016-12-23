@@ -5,10 +5,10 @@
 import {Component, OnInit} from '@angular/core';
 import {CreateCase} from "./create-case";
 import {UseCaseService} from '../use-case.service';
+import {FileUploader} from '../../../../node_modules/ng2-file-upload';
 
-import {FileSelectDirective, FileDropDirective,FileUploader} from '../../../../node_modules/ng2-file-upload';
-import {Directive} from "@angular/core/src/metadata/directives";
 
+let template = require('./simple-demo.html');
 // webpack html imports
 // let template = require('');
 
@@ -17,13 +17,34 @@ import {Directive} from "@angular/core/src/metadata/directives";
 const URL = 'http://10.255.249.120:8080/usecase/upload';
 
 @Component({
-  selector: 'content',
-  templateUrl: './simple-demo.html'
-
-
+  selector: 'content',template
 })
 
 export class CreateCaseComponent {
+  public items:Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
+    'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
+    'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin', 'Düsseldorf',
+    'Essen', 'Frankfurt', 'Genoa', 'Glasgow', 'Gothenburg', 'Hamburg', 'Hannover',
+    'Helsinki', 'Leeds', 'Leipzig', 'Lisbon', 'Łódź', 'London', 'Kraków', 'Madrid',
+    'Málaga', 'Manchester', 'Marseille', 'Milan', 'Munich', 'Naples', 'Palermo',
+    'Paris', 'Poznań', 'Prague', 'Riga', 'Rome', 'Rotterdam', 'Seville', 'Sheffield',
+    'Sofia', 'Stockholm', 'Stuttgart', 'The Hague', 'Turin', 'Valencia', 'Vienna',
+    'Vilnius', 'Warsaw', 'Wrocław', 'Zagreb', 'Zaragoza'];
+
+  items_multiple: Array<any> = [
+    { id: 1, text: 'Option #1' },
+    { id: 2, text: 'Option #2' },
+    { id: 3, text: 'Option #3' },
+    { id: 4, text: 'Option #4' },
+    { id: 5, text: 'Option #5' },
+    { id: 6, text: 'Option #6' },
+    { id: 7, text: 'Option #7' },
+    { id: 8, text: 'Option #8' },
+    { id: 9, text: 'Option #9' },
+    { id: 10, text: 'Option #10' },
+  ];
+
+
 
   public uploader:FileUploader = new FileUploader({url: URL});
   public hasBaseDropZoneOver:boolean = false;
@@ -34,7 +55,7 @@ export class CreateCaseComponent {
   }
 
   public fileOverAnother (e:any):void {
-    
+
     this.hasAnotherDropZoneOver = e;
   }
 

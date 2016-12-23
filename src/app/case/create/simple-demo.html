@@ -1,5 +1,34 @@
 
 
+
+
+<div class="card-block">
+  <ng-select [multiple]=true [items]="items_multiple" placeholder="Please select"></ng-select>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Dropzone</h3>
+        <div class="actions pull-right">
+          <i data-fullscreen-widget class="fa fa-expand"></i>
+          <i data-widget-toggle class="fa fa-chevron-down"></i>
+          <i data-widget-close class="fa fa-times"></i>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-body">
+          <form action="" class="dropzone" drop-zone="" id="file-dropzone">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
     <div class="navbar navbar-default">
@@ -54,7 +83,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let item of uploader.queue">
-                    <td><strong>{{ item?.file?.name }}</strong></td>
+                    <td><strong>{{ item?.file?.name }}</strong>{{item?.withCredentials}}</td>
                     <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
                     <td *ngIf="uploader.isHTML5">
                         <div class="progress" style="margin-bottom: 0;">

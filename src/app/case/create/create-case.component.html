@@ -4,6 +4,15 @@
 
       <div class="panel-body editview" [hidden]="submitted">
 
+
+
+        <!--<div class="row col-md-12 col-lg-12">-->
+
+            <!--<label for="campaignStartTime">Start Time</label>-->
+            <!--<datepicker-popup  (modelChange)="updateDate($event)" [required]="true" id="campaignStartTime"></datepicker-popup>-->
+
+        <!--</div>-->
+
         <form class="form-horizontal form-border" id="form" novalidate="novalidate" *ngIf="active"
               (ngSubmit)="onSubmit()" #siteForm="ngForm">
           <div class="form-group">
@@ -48,13 +57,14 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Source</label>
             <div class="col-sm-6">
-              <select class="form-control"
-                      required
-                      [(ngModel)]="model.dataSource" name="data_source"
-              >
-                <option *ngFor="let d_source of data_Sources" [value]="d_source">{{d_source}}</option>
+              <ng-select [multiple]=true [items]="data_Sources" placeholder="Please select"></ng-select>
+              <!--<select class="form-control"-->
+              <!--required-->
+              <!--[(ngModel)]="model.dataSource" name="data_source"-->
+              <!--&gt;-->
+              <!--<option *ngFor="let d_source of data_Sources" [value]="d_source">{{d_source}}</option>-->
 
-              </select>
+              <!--</select>-->
             </div>
           </div>
           <div class="form-group">
@@ -67,12 +77,13 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Data Analysis Model</label>
             <div class="col-sm-6">
-              <select class="form-control"
-                      [(ngModel)]="model.analysisModel" name="data_analysis_model"
-              >
-                <option *ngFor="let d_a_model of data_Analysis_Models" [value]="d_a_model">{{d_a_model}}</option>
+              <ng-select [multiple]=true [items]="data_Analysis_Models" placeholder="Please select"></ng-select>
+              <!--<select class="form-control"-->
+              <!--[(ngModel)]="model.analysisModel" name="data_analysis_model"-->
+              <!--&gt;-->
+              <!--<option *ngFor="let d_a_model of data_Analysis_Models" [value]="d_a_model">{{d_a_model}}</option>-->
 
-              </select>
+              <!--</select>-->
             </div>
           </div>
 
@@ -105,17 +116,35 @@
               </select>
             </div>
           </div>
+
+
           <div class="form-group">
             <label class="col-sm-3 control-label">Time Frame</label>
-            <div class="col-sm-3">
-              <input type="text" class="form-control " required="" placeholder=""
-                     [(ngModel)]="model.fromDate" name="start_time"
-              >
+
+            <div class="nav col-sm-3">
+              <div class="col-sm-3 control-label">
+                from
+              </div>
+              <div class="col-sm-9">
+
+                <input type="text" class="form-control " required="" placeholder=""
+                       [(ngModel)]="model.fromDate" name="start_time"
+                >
+              </div>
             </div>
-            <div class="col-sm-3">
-              <input type="text" class="form-control " required="" placeholder=""
-                     [(ngModel)]="model.toDate" name="end_time"
-              >
+
+
+            <div class=" nav col-sm-3">
+              <div class="col-sm-3 control-label">
+                to
+              </div>
+              <div class="col-sm-9">
+
+                <input type="text" class="form-control " required="" placeholder=""
+                       [(ngModel)]="model.toDate" name="end_time"
+                >
+              </div>
+
             </div>
           </div>
           <div class="form-group">
@@ -127,6 +156,7 @@
             </div>
           </div>
 
+
           <div class="form-group">
             <label class="col-sm-3 control-label col-ineedhelp"><i class="fa fa-hourglass-o" aria-hidden="true"></i>
               I need help</label>
@@ -134,16 +164,99 @@
               <textarea class="form-control" [(ngModel)]="model.help" name="i_need_help"
               ></textarea>
             </div>
+
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+
+              <tr *ngFor="let item of uploader.queue" class="col-sm-12  ">
+                <td class="col-sm-6"><strong>{{ item?.file?.name }}</strong></td>
+
+                <!--<td class="text-center col-sm-1">-->
+                <!--<span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>-->
+                <!--<span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>-->
+                <!--<span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>-->
+                <!--</td>-->
+                <td nowrap class="col-sm-4">
+                  <button type="button" class="btn btn-warning btn-xs"
+                          (click)="item.cancel()" [disabled]="!item.isUploading">
+                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                  </button>
+                  <button type="button" class="btn btn-danger btn-xs"
+                          (click)="item.remove()">
+                    <span class="glyphicon glyphicon-trash"></span> Remove
+                  </button>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+              <div class="progress" style="">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-sm-offset-3 col-sm-6">
+              <div ng2FileDrop
+                   [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
+                   (fileOver)="fileOverAnother($event)"
+                   [uploader]="uploader"
+                   class="well my-drop-zone" style="">
+                upload
+                <input class="fileInput well my-drop-zone col-sm-12" type="file"
+                       ng2FileSelect [uploader]="uploader" multiple
+                       (change)="selectedFileOnChanged($event)"
+                />
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
               <button type="submit" class="btn btn-info btn-lg"
-                      [disabled]="siteForm.form.valid">Submit</button>
+                      [disabled]="siteForm.form.valid">Submit
+              </button>
             </div>
           </div>
-          {{submitJson}}
+          <!--{{submitJson}}-->
         </form>
       </div>
     </div>
   </div>
+  <datetime [(ngModel)]="date4" [timepicker]="{ icon: 'fa fa-clock-o' }" [datepicker]="{ icon: 'fa fa-calendar' }"></datetime>
+  <!--<div>-->
+    <!--<pre class="card card-block card-header">Selected date is: <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>-->
+    <!--<h4>Inline</h4>-->
+    <!--<div style="display:inline-block; min-height:290px;">-->
+      <!--<datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled"></datepicker>-->
+    <!--</div>-->
+    <!--<hr />-->
+    <!--<button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>-->
+    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="d20090824();">2009-08-24</button>-->
+    <!--<button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>-->
+    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="toggleMin()" tooltip="After today restriction">Min date</button>-->
+    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="disableTomorrow()">Disable Tomorrow</button>-->
+  <!--</div>-->
 </div>
+
+<style>
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+</style>
+
+

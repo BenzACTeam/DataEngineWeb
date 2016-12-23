@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
 import { FileUploadModule } from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
 import { DashboardComponent }   from './home/dashboard.component';
 import { DetailComponent }   from './case/detail/detail.component';
@@ -15,6 +16,7 @@ import {UseCaseService} from './case/use-case.service';
 import {TestComponent} from "./test/test";
 //noinspection TypeScriptCheckImport
 import { SelectModule }  from 'ng2-select';
+// import{ NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
 
 
@@ -33,7 +35,8 @@ import { SelectModule }  from 'ng2-select';
     AppRoutingModule,
     HttpModule,
     FileUploadModule,
-    SelectModule
+    SelectModule,
+    // NKDatetimeModule
   ],
   providers: [UseCaseService],
   bootstrap: [AppComponent]

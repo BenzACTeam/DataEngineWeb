@@ -157,6 +157,15 @@ canvas {
   padding: 0 0 0 10px;
   position: relative;
 }
+/*upload*/
+.fileInput{
+
+  position:absolute;
+  right:0;
+  top:0;
+  opacity: 0;
+
+}
 
 #header .logo {
   color: #1d212a;

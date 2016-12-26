@@ -2,20 +2,25 @@
   <div class="col-xs-12">
     <div class="panel view-detail">
       <div class="panel-body">
-        <header>
-          <h2>{{cases.id}}</h2>
-        </header>
-        <div class="row view-mail-header">
-          <div class="col-md-8 ">
-            <img src="assets/avatar5.png" alt="" class="img-circle" width="50" height="50">
-            <strong><a href="#">{{cases.id}}</a></strong>
-            <small>
-              <i class="fa fa-clock-o"></i> {{cases.date}}</small>
+        <div class="col-xs-12">
+          <div class="col-md-10">
+            <h1>{{cases.title}} 是大海就发生的积分换 爱上的回复金卡戴珊房间卡第三方的合法爱打架话说地方 很费劲的发 好
+              <button class="detail-edit-button">edit</button>
+            </h1>
+            <div>
+              <img src="assets/avatar5.png" alt="" class="img-circle home-img-border" width="50" height="50">
+              <strong>{{cases.id}}</strong>
+              <small>
+                <i class="fa fa-clock-o"></i> {{cases.date}}2012-12-12
+              </small>
+            </div>
           </div>
-          <div class="col-md-4">
+
+          <div class="col-md-2">
             <div class="view-mail-reply pull-right text-center">
-              <p><a class="btn" routerLink="/detail" href="#" role="button"><i class="fa fa-eye"></i> {{cases.see}}</a></p>
-              <button class="btn btn-sm btn-info">Clone</button>
+              <div class="detail-edit-eye"><strong><i class="fa fa-eye"></i> {{cases.see}} 2247</strong></div>
+              <button class="btn btn-sm btn-info detail-clone">Clone</button>
+              <button class="btn btn-sm btn-info detail-download">Download</button>
             </div>
           </div>
         </div>
@@ -23,7 +28,7 @@
         <div class="row">
           <div class="col-xs-12">
 
-            <div class="panel view-mail-wrapper" >
+            <div class="panel view-mail-wrapper">
               <div class="panel-body">
 
 
@@ -32,35 +37,73 @@
                     <div class="panel view-mail-body">
 
                       <div class="panel-body">
-                        <p>
-                          <span class="label label-danger ">Business Value:</span>{{cases.value}}
-                        </p>
-                        <p>
-                          <span class="label label-warning">Business Scenario:</span>{{cases.scenario}}
-                        </p>
-                        <p>
-                          <span class="label label-primary">Business Result:</span>{{cases.result}}
-                        </p>
-
-                      </div>
-                      <div class="col-md-12 column">
-                        <div class="col-md-3">
-                          <img src="assets/test1.png"   alt="">
+                        <div>
+                          <h2>Business Value</h2>
+                          <small>{{cases.value}}</small>
                         </div>
-                        <div class="col-md-3">
-                          <img src="assets/test1.png" alt="">
-                        </div><div class="col-md-3">
-                        <img src="assets/test2.png"  alt="">
-                      </div>
-                        <div class="col-md-3">
-                        <img src="assets/test2.png"  alt="">
-                      </div>
+                        <div>
+                          <h2>Business Scenario</h2>
+                          <small>{{cases.scenario}}</small>
+                        </div>
+                        <div>
+                          <h2>Business Result</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Date Sourece:</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Date Type Description</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Date Analysis Model</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Analysis Method Description</h2>
+                          <small>{{cases.result}}</small>
+                          </div>
+                        <div class="col-md-12 column">
+                          <div class="col-md-2">
+                            <img src="assets/test1.png" alt="">
+                          </div>
+                          <div class="col-md-2">
+                            <img src="assets/test1.png" alt="">
+                          </div>
+                          <div class="col-md-2">
+                            <img src="assets/test2.png" alt="">
+                          </div>
+                        </div>
+                        <div>
+                          <h2>Contribution BU</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Stage</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Time Frame</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div>
+                          <h2>Contact</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
+                        <div class="col-md-12 column">
+                          Reference:
+                          <abbr title="{{cases.dataSource}}" class="initialism">{{cases.dataSource}}</abbr>
+                        </div>
+                        <div>
+                          <h2>I Need Help</h2>
+                          <small>{{cases.result}}</small>
+                        </div>
 
                       </div>
-                      <div class="col-md-12 column">
-                        Reference:
-                        <abbr title="{{cases.dataSource}}" class="initialism">{{cases.dataSource}}</abbr>
-                      </div>
+
+
                       <div class="panel-footer">
                         <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like {{cases.like}}</a>
                         <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment {{cases.comment}}</a>
@@ -76,8 +119,36 @@
               </div>
             </div>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<style>
+  .detail-edit-button {
+    font-size: 50%;
+    color: #999;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #999;
+  }
+
+  .detail-edit-eye {
+    color: #999;
+    font-size: 120%;
+  }
+
+  .detail-clone {
+    padding: 3px 30px;
+    margin-top: 10px;
+    font-size: 90%;
+  }
+
+  .detail-download {
+    padding: 2px 16px;
+    font-size: 90%;
+    background-color: #fff;
+    border: 1px solid #00a2e2;
+    color: #00a2e2;
+  }
+</style>

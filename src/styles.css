@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  color: #565656;
+  color: #333E4D;
   background: #F0F3F3;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 100%;
@@ -105,10 +105,11 @@ canvas {
   max-width: 100%;
 }
 
-.editview label{
+.editview label {
   color: #4C5E6E;
 }
-.editview .col-ineedhelp{
+
+.editview .col-ineedhelp {
   color: #00a2e2;
 }
 
@@ -157,12 +158,13 @@ canvas {
   padding: 0 0 0 10px;
   position: relative;
 }
-/*upload*/
-.fileInput{
 
-  position:absolute;
-  right:0;
-  top:0;
+/*upload*/
+.fileInput {
+
+  position: absolute;
+  right: 0;
+  top: 0;
   opacity: 0;
 
 }
@@ -1065,6 +1067,7 @@ canvas {
   border-bottom: 1px solid #dce0e6;
   position: relative;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 @media (max-width: 767px) {
@@ -2076,6 +2079,30 @@ fieldset[disabled] .btn-warning.active {
   border: none;
 }
 
+.panel-solid-info > .panel-body-yellow {
+  background-color: #f1c40f;
+  color: #fff;
+  border: none;
+}
+
+.panel-solid-info > .panel-body-yellow {
+  background-color: #f1c40f;
+  color: #fff;
+  border: none;
+}
+
+.panel-solid-info > .panel-body-yellow {
+  background-color: #f1c40f;
+  color: #fff;
+  border: none;
+}
+
+.panel-solid-info > .panel-body-yellow {
+  background-color: #f1c40f;
+  color: #fff;
+  border: none;
+}
+
 .panel-solid-info > .panel-body,
 .panel-solid-info > .panel-footer,
 .panel-solid-info > .panel-heading {
@@ -2085,8 +2112,9 @@ fieldset[disabled] .btn-warning.active {
 }
 
 .panel-solid-info .fa {
-  color: #006e9b;
+  color: #F0F3F3;
 }
+
 
 .panel-solid-danger > .panel-body,
 .panel-solid-danger > .panel-footer,
@@ -4054,11 +4082,17 @@ label.valid {
 
 .view-mail-wrapper .view-mail-reply .btn-info {
   background-color: #fff;
-  border: 1px solid #238acc;
-  padding: 6px 20px;
-  color: #238acc;
+  border: 1px solid #00a2e2;
+  padding: 2px 20px;
+  color: #00a2e2;
+  font-size: 82%;
 }
 
+
+.home-img-border {
+  border: 2px solid #00a2e2;
+
+}
 .view-mail-wrapper .view-mail-body {
   padding-left: 55px;
   margin-bottom: 0;
@@ -5301,25 +5335,25 @@ div.config h4 a:hover {
 r {
   cursor: pointer;
 }
+
 select {
   /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
   border: solid 1px #000;
 
   /*很关键：将默认的select选择框样式清除*/
-  appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 
   /*在选择框的最右侧中间显示小箭头图片*/
-
-
-
 
   /*为下拉小箭头留出一点位置，避免被文字覆盖*/
   padding-right: 14px;
 }
 
-
 /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
-select::-ms-expand { display: none; }
+select::-ms-expand {
+  display: none;
+}
+
 

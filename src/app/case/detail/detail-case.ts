@@ -1,6 +1,6 @@
 
 
-export class SiteCase {
+export class DetailCase {
   constructor(
     public id: string,
     public title:string,

@@ -7,6 +7,7 @@ import {CreateCase} from "./create-case";
 import {UseCaseService} from '../use-case.service';
 import {FileUploader} from '../../../../node_modules/ng2-file-upload';
 import * as moment from 'moment';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 
 // webpack html imports
@@ -20,6 +21,18 @@ let template = require('./create-case.component.html');
 })
 
 export class CreateCaseComponent {
+  date1 = new Date("2015-01-01");
+
+  // dataForm: FormGroup;
+  //
+  // constructor(private formBuilder: FormBuilder) {
+  // }
+  //
+  // ngOnInit() {
+  //   this.dataForm = this.formBuilder.group({
+  //     date: ''
+  //   });
+  // }
   items_multiple: Array<any> = [
     {id: 1, text: 'Option #1'},
     {id: 2, text: 'Option #2'},

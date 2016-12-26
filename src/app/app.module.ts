@@ -16,8 +16,8 @@ import {UseCaseService} from './case/use-case.service';
 import {TestComponent} from "./test/test";
 //noinspection TypeScriptCheckImport
 import { SelectModule }  from 'ng2-select';
-// import{ NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 
 
 @NgModule({
@@ -36,7 +36,8 @@ import { SelectModule }  from 'ng2-select';
     HttpModule,
     FileUploadModule,
     SelectModule,
-    // NKDatetimeModule
+    Ng2DatetimePickerModule
+
   ],
   providers: [UseCaseService],
   bootstrap: [AppComponent]

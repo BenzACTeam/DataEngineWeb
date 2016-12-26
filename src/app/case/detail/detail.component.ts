@@ -5,6 +5,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, Params, ActivatedRoute} from "@angular/router";
 import {UseCaseService} from "../use-case.service";
+import {DetailCase} from './detail-case';
 
 
 
@@ -13,21 +14,24 @@ import {UseCaseService} from "../use-case.service";
   templateUrl: './detail.component.html'
 })
 export class DetailComponent implements OnInit {
-  cases=[]
+  cases =new DetailCase("111","sadfnajksdfajkdshfjakdhfsjkadhsfkjadshfajk","111","111","111","111","111","111","111","111","111","111","111","111","111","122");
+
   caseId="";
   // selectedTodo: Todo;
-  constructor(private route: ActivatedRoute,private useCaseSercice: UseCaseService) {}
+  constructor(private route: ActivatedRoute,private useCaseSercice: UseCaseService) {
+
+  }
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-      // lettodoId = +;// 使用+将字符串类型的参数转换成数字
+      // lettodoId = +;
       // this.selectedTodo =this.todoService.getTodoById(todoId);
       this.caseId = params['id'];
-      alert(this.caseId);
+      // alert(this.caseId);
     });
-    this.useCaseSercice.getDetail(this.caseId)
-      .then(
-        cases => this.cases = cases
-      );
+    // this.useCaseSercice.getDetail(this.caseId)
+    //   .then(
+    //     cases => this.cases = cases
+    //   );
   }
 
 

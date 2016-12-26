@@ -4,15 +4,6 @@
 
       <div class="panel-body editview" [hidden]="submitted">
 
-
-
-        <!--<div class="row col-md-12 col-lg-12">-->
-
-            <!--<label for="campaignStartTime">Start Time</label>-->
-            <!--<datepicker-popup  (modelChange)="updateDate($event)" [required]="true" id="campaignStartTime"></datepicker-popup>-->
-
-        <!--</div>-->
-
         <form class="form-horizontal form-border" id="form" novalidate="novalidate" *ngIf="active"
               (ngSubmit)="onSubmit()" #siteForm="ngForm">
           <div class="form-group">
@@ -128,7 +119,7 @@
               <div class="col-sm-9">
 
                 <input type="text" class="form-control " required="" placeholder=""
-                       [(ngModel)]="model.fromDate" name="start_time"
+                       [(ngModel)]="model.fromDate" name="start_time" ng2-datetime-picker
                 >
               </div>
             </div>
@@ -141,7 +132,7 @@
               <div class="col-sm-9">
 
                 <input type="text" class="form-control " required="" placeholder=""
-                       [(ngModel)]="model.toDate" name="end_time"
+                       [(ngModel)]="model.toDate" name="end_time" ng2-datetime-picker
                 >
               </div>
 
@@ -230,8 +221,8 @@
       </div>
     </div>
   </div>
-  <datetime [(ngModel)]="date4" [timepicker]="{ icon: 'fa fa-clock-o' }" [datepicker]="{ icon: 'fa fa-calendar' }"></datetime>
-  <!--<div>-->
+  <!--<datetime [(ngModel)]="date4" [timepicker]="{ icon: 'fa fa-clock-o' }" [datepicker]="{ icon: 'fa fa-calendar' }"></datetime>-->
+  <!--&lt;!&ndash;<div>&ndash;&gt;-->
     <!--<pre class="card card-block card-header">Selected date is: <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>-->
     <!--<h4>Inline</h4>-->
     <!--<div style="display:inline-block; min-height:290px;">-->

@@ -7,6 +7,8 @@ import {Headers, Http, ResponseContentType, RequestOptions} from '@angular/http'
 
 import 'rxjs/add/operator/toPromise';
 import {SiteCase} from "../home/case"
+import {DetailCase} from "../case/detail/detail-case"
+
 import any = jasmine.any;
 
 @Injectable()
@@ -33,11 +35,11 @@ export class UseCaseService {
 
        .catch(this.handleError);
   }
-  getDetail(url):Promise<SiteCase[]>{
+  getDetail(url):Promise<DetailCase[]>{
 
     return this.http.get(this.detailUrl+url)
       .toPromise()
-      .then(response => response.json() as SiteCase[])
+      .then(response => response.json() as DetailCase[])
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {

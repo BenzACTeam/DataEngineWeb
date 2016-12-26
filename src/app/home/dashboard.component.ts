@@ -4,13 +4,18 @@
 
 import {Component, OnInit} from '@angular/core';
 import {UseCaseService} from '../case/use-case.service';
+import {SiteCase} from './case';
+
 
 @Component({
   selector: 'content',
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
-  cases = [];
+  cases = [
+    new SiteCase("111","sadfnajksdfajkdshfjakdhfsjkadhsfkjadshfajk","111","111","111","111","111","111","111","111","111","111","111","111","111","122"),
+    new SiteCase("111","asdfghajsdfgajhsdgfhajdsfahjdfgahjdfgahjdfg","111","111","111","111","111","111","111","111","111","111","111","111","111","122")
+  ];
   constructor(private useCaseSercice: UseCaseService) {
 
   }
@@ -22,6 +27,7 @@ export class DashboardComponent {
       .then(
         cases => this.cases = cases,
       );
+
 
   }
 }

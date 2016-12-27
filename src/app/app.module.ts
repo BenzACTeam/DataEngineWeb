@@ -19,6 +19,10 @@ import { SelectModule }  from 'ng2-select';
 
 import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 
+import {EditCaseComponent} from "./case/edit/edit-case.component";
+import {UserComponent} from "./user/user.component";
+import {ListSearchComponent} from "./search/list-search.component";
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
     DetailComponent,
     CreateCaseComponent,
     ListCaseComponent,
-    TestComponent
+    TestComponent,
+    EditCaseComponent,
+    UserComponent,
+    ListSearchComponent
   ],
   imports: [
     BrowserModule,

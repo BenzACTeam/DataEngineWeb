@@ -9,6 +9,9 @@ import { DashboardComponent }   from './home/dashboard.component';
 import { DetailComponent }   from './case/detail/detail.component';
 import {CreateCaseComponent} from "./case/create/create-case.component";
 import {ListCaseComponent} from "./case/list-case.component";
+import {EditCaseComponent} from "./case/edit/edit-case.component";
+import {UserComponent} from "./user/user.component";
+import {ListSearchComponent} from "./search/list-search.component";
 import {TestComponent} from "./test/test";
 
 const routes: Routes = [
@@ -18,6 +21,10 @@ const routes: Routes = [
   { path: 'createcase',  component: CreateCaseComponent },
   { path: 'listcase',  component: ListCaseComponent },
   { path: 'test',  component: TestComponent },
+  { path: 'edit',  component: EditCaseComponent },
+  { path: 'user/:id',  component: UserComponent },
+  { path: 'search/:id',  component: ListSearchComponent },
+
 ];
 
 @NgModule({

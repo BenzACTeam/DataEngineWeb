@@ -30,4 +30,7 @@ export class AppComponent {
     $event.stopPropagation();
     this.status.isopen = !this.status.isopen;
   }
+
+
+
 }

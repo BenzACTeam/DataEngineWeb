@@ -22,6 +22,7 @@ import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 import {EditCaseComponent} from "./case/edit/edit-case.component";
 import {UserComponent} from "./user/user.component";
 import {ListSearchComponent} from "./search/list-search.component";
+import { ProgressbarModule } from 'ng2-bootstrap';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {ListSearchComponent} from "./search/list-search.component";
     TestComponent,
     EditCaseComponent,
     UserComponent,
-    ListSearchComponent
+    ListSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import {ListSearchComponent} from "./search/list-search.component";
     HttpModule,
     FileUploadModule,
     SelectModule,
-    Ng2DatetimePickerModule
+    Ng2DatetimePickerModule,
+    ProgressbarModule
 
   ],
   providers: [UseCaseService],

@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-xs-12">
+
+    <div class="panel ">
+      <div class="panel-body">
+        <div class="row ">
+          <div class="col-md-2">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class=" img-circle user-img" src="assets/avatar5.png">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="col-md-10">
+
+              <div class="col-md-4">
+                Philip Wang
+                <a href="#">
+                  <img class="img-circle user-img-level" src="assets/level.jpg">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <div class="col-md-12">
+                  <div class="col-md-6">leader</div>
+                  <div class="col-md-6">leader</div>
+                </div>
+                <div class="col-md-12">
+                  <progressbar [max]="max" [value]="dynamic" class="lv-loging">
+
+                  </progressbar>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10">
+              Marketing & Development
+              <button class="user-edit-button" routerLink="/edit">Edit</button>
+            </div>
+            <div class="col-md-10">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Beijing
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .user-img {
+    width: 83%;
+    border: 1px solid #000000;
+  }
+
+  .user-img-level {
+    width: 18%;
+  }
+
+  .user-edit-button {
+    font-size: 80%;
+    color: #999;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #999;
+    padding: 1px 16px;
+  }
+
+  .lv-loging {
+
+  }
+</style>

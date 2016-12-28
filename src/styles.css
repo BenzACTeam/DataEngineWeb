@@ -2115,7 +2115,6 @@ fieldset[disabled] .btn-warning.active {
   color: #F0F3F3;
 }
 
-
 .panel-solid-danger > .panel-body,
 .panel-solid-danger > .panel-footer,
 .panel-solid-danger > .panel-heading {
@@ -4088,11 +4087,11 @@ label.valid {
   font-size: 82%;
 }
 
-
 .home-img-border {
   border: 2px solid #00a2e2;
 
 }
+
 .view-mail-wrapper .view-mail-body {
   padding-left: 55px;
   margin-bottom: 0;

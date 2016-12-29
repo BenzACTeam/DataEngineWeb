@@ -3984,6 +3984,15 @@ label.valid {
   list-style: none;
 }
 
+.view-mail-wrapper {
+  position: relative;
+}
+
+.view-mail-wrapper:hover {
+  border: 1px solid #00a2e2;
+  cursor: pointer;
+}
+
 .view-mail-wrapper header {
   color: #a2a2a2;
 }
@@ -4011,10 +4020,13 @@ label.valid {
 }
 
 .view-mail-wrapper .view-mail-header .media-heading {
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .view-mail-wrapper .view-mail-reply {
+  position: absolute;
+  top: 13px;
+  right: 15px;
 }
 
 .view-mail-reply p {
@@ -4068,7 +4080,8 @@ label.valid {
 .view-mail-wrapper .view-mail-body p {
   line-height: 1.8em;
 }
-.view-mail-wrapper .view-mail-body p label{
+
+.view-mail-wrapper .view-mail-body p label {
   color: #0e4178;
   font-weight: normal;
 }
@@ -4105,7 +4118,6 @@ label.valid {
   font-size: 12px;
   color: #ccc;
 }
-
 
 .view-mail-wrapper .view-mail-body .panel-footer .btn {
   font-size: 18px;
@@ -5307,3 +5319,12 @@ div.config h4 a:hover {
 r {
   cursor: pointer;
 }
+
+.show-more, a.show-more:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #00a2e2;
+  margin-bottom: 20px;
+}
+
+

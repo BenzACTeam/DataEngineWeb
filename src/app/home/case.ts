@@ -3,7 +3,6 @@
 export class SiteCase {
   constructor(
     public id: string,
-    public title:string,
     public subject:string,
     public value:string,
     public scenario:string,
@@ -16,9 +15,11 @@ export class SiteCase {
     public fromDate:string,
     public toDate:string,
     public contact:string,
-    public help:string,
-    public analysisMethodDescrption:string
-
+    public resultText:string,
+    public resultFiles:string[],
+    public analysisModelText:string,
+    public analysisModelFiles:string[]
   ) {}
+
 }
 

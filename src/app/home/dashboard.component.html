@@ -52,9 +52,8 @@
 
 <div class="row">
   <div class="col-xs-12">
-
-    <div class="panel view-mail-wrapper" *ngFor="let case of cases">
-      <div class="panel-body">
+    <div class="panel view-mail-wrapper" *ngFor="let case of pagedList.list" [routerLink]="[ '/detail', case.id]" routerL>
+      <div class="panel-body" >
         <div class="row view-mail-header">
           <div class="col-md-8 ">
             <div class="media">
@@ -69,33 +68,26 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="view-mail-reply pull-right">
-              <button class="btn btn-sm btn-info">Clone</button>
-              <a class="btn" routerLink="/detail" href="#" role="button">
-                <p>2287</p><i class="fa fa-eye"></i>
-              </a>
-            </div>
-          </div>
         </div>
-
+        <div class="view-mail-reply pull-right">
+          <button class="btn btn-sm btn-info">Clone</button>
+          <a class="btn" href="javascript:void(0);" role="button">
+            <p>2287</p><i class="fa fa-eye"></i>
+          </a>
+        </div>
         <div class="row">
           <div class="col-md-12">
             <div class="panel view-mail-body">
-              <div class="panel-heading">Panel heading without title</div>
+              <div class="panel-heading">{{case.subject}}</div>
               <div class="panel-body">
                 <p>
-                  <span class="label ">Business Value:</span>test
+                  <span class="label ">Business Value:</span>{{case.value}}
                 </p>
                 <p>
-                  <span class="label ">Business Scenario:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest
-                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest
-                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                  <span class="label ">Business Scenario:</span>{{case.scenario}}
                 </p>
                 <p>
-                  <span class="label ">Business Result:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest
-                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest
-                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                  <span class="label ">Business Result:</span>{{case.resultText}}
                 </p>
                 <p>
                   <label>Reference:</label>
@@ -103,7 +95,7 @@
                 </p>
               </div>
               <div class="panel-footer">
-                <span class="help-block"><i class="fa fa-clock-o"></i> 2016-12-14 14:15</span>
+                <span class="help-block"><i class="fa fa-clock-o"></i>{{case.fromDate}}</span>
                 <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like</a>
                 <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment</a>
                 <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share</a>
@@ -113,6 +105,12 @@
         </div>
       </div>
     </div>
-
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <a class="btn btn-default btn-block show-more" (click)="showMore();"
+       *ngIf="pagedList.hasNextPage"><span>show more </span><i class="fa fa-angle-double-down"
+                                                               aria-hidden="true"></i></a>
   </div>
 </div>

@@ -25,7 +25,7 @@
               <div class="col-md-7">
                 <div class="col-md-12">
                   <div class="col-md-6">leader</div>
-                  <div class="col-md-6">leader</div>
+                  <div class="col-md-6">sliver</div>
                 </div>
                 <div class="col-md-12">
                   <progressbar [max]="max" [value]="dynamic" class="lv-loging">
@@ -46,10 +46,91 @@
           <div class="col-md-2"></div>
 
         </div>
+
+      </div>
+      <div class="col-xs-12 text-center user-setting">Setting</div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-12">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="col-xs-12">
+      <div class="col-xs-2">Created Cases</div>
+      <div class="col-xs-1 col-xs-offset-9">
+        <button class="user-edit-button" [routerLink]="[ '/usermore', 'createcase']" routerL >More</button>
+
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="tab-content user-card-red">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="tab-content user-card-yellow">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="tab-content user-card-blue">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 <style>
   .user-img {
     width: 83%;
@@ -69,7 +150,22 @@
     padding: 1px 16px;
   }
 
-  .lv-loging {
+  .user-card-red {
+    border: 1px solid #E22D39;
+    border-left: 5px solid #E22D39;
+  }
 
+  .user-card-blue {
+    border: 1px solid #00a2e2;
+    border-left: 5px solid #00a2e2;
+  }
+
+  .user-card-yellow {
+    border: 1px solid #FDA72D;
+    border-left: 5px solid #FDA72D;
+  }
+  .user-setting{
+    background-color: #fff;
+    border-top: 1px solid #F0F3F3;
   }
 </style>

@@ -14,7 +14,8 @@ import {EditCase} from './edit-case';
   templateUrl: './edit-case.component.html'
 })
 export class EditCaseComponent implements OnInit {
-  cases =new EditCase("111","sadfnajksdfajkdshfjakdhfsjkadhsfkjadshfajk","111","111","111","111","111","111","111","111","111","111","111","111","111","122");
+  cases =new EditCase("111","sadfnajksdfajkdshfjakdhfsjkadhsfkjadshfajk","111","111","111","111",
+    "111","111","111","111","111","111","111","111","111","122");
 
   caseId="";
   // selectedTodo: Todo;

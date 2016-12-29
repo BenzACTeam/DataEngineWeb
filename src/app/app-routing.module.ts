@@ -1,7 +1,6 @@
 /**
  * Created by paulliu on 2016/12/7.
  */
-
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,6 +12,7 @@ import {EditCaseComponent} from "./case/edit/edit-case.component";
 import {UserComponent} from "./user/user.component";
 import {ListSearchComponent} from "./search/list-search.component";
 import {TestComponent} from "./test/test";
+import {UserMoreComponent} from "./user/more/user-more.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'edit',  component: EditCaseComponent },
   { path: 'user/:id',  component: UserComponent },
   { path: 'search/:id',  component: ListSearchComponent },
-
+  { path: 'usermore/:id',  component: UserMoreComponent }
 ];
 
 @NgModule({

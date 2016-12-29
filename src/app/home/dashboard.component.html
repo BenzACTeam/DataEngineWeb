@@ -1,56 +1,52 @@
 <div class="row">
-
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="panel panel-solid-info widget-mini">
-      <div class="panel-body home-skyblue">
-        <span class="icon"><i class="home-fa1 fa fa-plus "></i></span>
+      <div class="panel-body">
+        <span class="icon"><i class="fa fa-plus"></i></span>
         <div class="inf">
           <span class="total text-center">4,387</span>
-          <span class="title text-center home-small">Create Cases</span>
+          <span class="title text-center">Create Cases</span>
         </div>
       </div>
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="panel panel-solid-info widget-mini">
-      <div class="panel-body home-yellow">
-        <span class="icon"><i class="home-fa2 fa fa-thumbs-o-up"></i></span>
+      <div class="panel-body">
+        <span class="icon"><i class="fa fa-thumbs-o-up"></i></span>
         <div class="inf">
           <span class="total text-center">2,936</span>
-          <span class="title text-center home-small">Thumb-up</span>
+          <span class="title text-center">Thumb-up</span>
         </div>
       </div>
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="panel panel-solid-info widget-mini">
-      <div class="panel-body home-red">
-        <span class="icon"><i class="home-fa3 fa fa-commenting-o" aria-hidden="true"></i></span>
+      <div class="panel-body">
+        <span class="icon"><i class="fa fa-comment-o"></i></span>
         <div class="inf">
           <span class="total text-center">1,007</span>
-          <span class="title text-center home-small">Comment Cases</span>
+          <span class="title text-center">Comment Cases</span>
         </div>
       </div>
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="panel panel-solid-info widget-mini">
-      <div class="panel-body home-blue">
-        <span class="icon"><i class="home-fa4 fa fa-eye"></i></span>
+      <div class="panel-body">
+        <span class="icon"><i class="fa fa-share-square-o"></i></span>
         <div class="inf">
           <span class="total text-center">1,960</span>
-          <span class="title text-center home-small">Sharing Cases</span>
+          <span class="title text-center">Sharing Cases</span>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="col-lg-13">
-  <img src="assets/aa.jpg">
 </div>
 
 <div class="sectionheader">
-  <h2><strong>Latest Case</strong></h2>
+  <h3>Latest Case</h3>
   <small>Checkout your latest cases</small>
 </div>
 
@@ -60,131 +56,57 @@
     <div class="panel view-mail-wrapper" *ngFor="let case of cases">
       <div class="panel-body">
         <div class="row view-mail-header">
-          <div class="col-md-10 ">
+          <div class="col-md-8 ">
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object img-circle home-img-border" src="assets/avatar5.png">
+                  <img class="media-object img-circle" src="assets/avatar5.png">
                 </a>
               </div>
               <div class="media-body">
-                <div class="col-md-3">
-                  <h4 class="media-heading">
-                    {{case.subject}}asdfadsfas
-                  </h4>
-                  <small>{{case.scenario}}adsadadadad</small>
-                </div>
-
-
-                <div class="col-md-3">
-                  <td class="col-md-2">
-                    <p class="level-font">I</p>
-                    <hr class="level col-md-12"/>
-                  </td>
-                  <td class="col-md-2">
-                    <p class="level-font">V</p>
-                    <hr class="level2 col-md-12"/>
-                  </td>
-                  <td class="col-md-2">
-                    <p class="level-font">A</p>
-                    <hr class="level3 col-md-12"/>
-                  </td>
-                  <td class="col-md-2">
-                    <p class="level-font">I</p>
-                    <hr class="level4 col-md-12"/>
-                  </td>
-                </div>
-
-
+                <h4 class="media-heading">Adam Larbert</h4>
+                <small>Design & Development</small>
               </div>
-
             </div>
           </div>
-          <div class="col-md-2">
-
-
-            <div class="view-mail-reply from-center text-center ">
-              <tr>
-                <td class="col-md-7form-control">
-                  <button class="home-clone btn btn-sm btn-info ">Clone</button>
-                </td>
-                <td class="col-md-4">
-              <tr>{{case.id}}</tr>
-              <tr><i class="fa fa-eye"></i></tr>
-              </td>
-              </tr>
-            </div>
-
-
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="panel view-mail-body">
-              <!--<a class="btn" [routerLink]="[ '/detail', { caseId: case.id}]" routerL href="#" role="button">-->
-              <a class="btn" [routerLink]="[ '/detail', 1]" routerL role="button">
-                <div class="panel-heading">{{case.title}}</div>
+          <div class="col-md-4">
+            <div class="view-mail-reply pull-right">
+              <button class="btn btn-sm btn-info">Clone</button>
+              <a class="btn" routerLink="/detail" href="#" role="button">
+                <p>2287</p><i class="fa fa-eye"></i>
               </a>
-              <div class="panel-body">
-
-                <p>
-                  <span class="label home-spanBorder">Business Value:</span>{{case.value}}
-                </p>
-                <p>
-                  <span class="label home-spanBorder">Business Scenario:</span>{{case.scenario}}
-                </p>
-                <p>
-                  <span class="label home-spanBorder">Business Result:</span>{{case.result}}
-                </p>
-
-                Reference:
-                <abbr title="{{case.reference}}" class="initialism">{{case.contributionBU}}</abbr>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-12 column">
-            <div class="panel view-mail-body">
-              <div class="panel-footer">
-                <div class="col-md-2">
-                  <img src="assets/test1.png" alt="">
-                </div>
-                <div class="col-md-2">
-                  <img src="assets/test1.png" alt="">
-                </div>
-                <div class="col-md-2">
-                  <img src="assets/test2.png" alt="">
-                </div>
-                <div class="col-md-2">
-                  <img src="assets/test2.png" alt="">
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <div class="row">
 
+        <div class="row">
           <div class="col-md-12">
             <div class="panel view-mail-body">
-              <div class="panel-footer">
-
-
-                <span class="help-block"><i class="fa fa-clock-o"></i> {{case.date}}</span>
-                <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like {{case.like}}</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-commenting-o" aria-hidden="true"></i> Comment
-                  {{case.comment}}</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share {{case.share}}</a>
+              <div class="panel-heading">Panel heading without title</div>
+              <div class="panel-body">
+                <p>
+                  <span class="label ">Business Value:</span>test
+                </p>
+                <p>
+                  <span class="label ">Business Scenario:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest
+                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest
+                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                </p>
+                <p>
+                  <span class="label ">Business Result:</span>test contesntsdfasdfasdftest contesntsdfasdfasdftest
+                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest
+                  contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdftest contesntsdfasdfasdf
+                </p>
+                <p>
+                  <label>Reference:</label>
+                  <small>This line of text is meant to be treated as fine print.</small>
+                </p>
               </div>
-
-              <div class="panel-body col-sm-11">
-                <textarea class="form-control"></textarea>
+              <div class="panel-footer">
+                <span class="help-block"><i class="fa fa-clock-o"></i> 2016-12-14 14:15</span>
+                <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like</a>
+                <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment</a>
+                <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share</a>
               </div>
             </div>
           </div>
@@ -193,85 +115,4 @@
     </div>
 
   </div>
-
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class=" text-center home-showmore">
-      <small>show more <i class="fa fa-angle-double-down" aria-hidden="true"></i></small>
-    </div>
-  </div>
-</div>
-
-<style>
-  .home-yellow {
-
-    background-color: #FDA72D;
-  }
-
-  .home-skyblue {
-    background-color: #00a2e2;
-  }
-
-  .home-red {
-    background-color: #E22D39;
-  }
-
-  .home-blue {
-    background-color: #173B6E;
-  }
-
-  .home-spanBorder {
-    border: 1px solid #173B6E;
-    color: #173B6E;
-  }
-
-  .home-showmore {
-    border: 1px solid #00a2e2;
-  }
-
-  .home-fa2 {
-    color: #FDA72D;
-  }
-
-  .home-fa1 {
-    color: #00a2e2;
-  }
-
-  .home-fa3 {
-    color: #E22D39;
-  }
-
-  .home-fa4 {
-    color: #173B6E;
-  }
-
-  .home-small {
-    font-size: 80%;
-  }
-
-  .level {
-    border-top: 5px solid #00a2e2;
-    margin-top: -14px;
-  }
-
-  .level2 {
-    border-top: 5px solid #FDA72D;
-    margin-top: -14px;
-  }
-
-  .level3 {
-    border-top: 5px solid #E22D39;
-    margin-top: -14px;
-  }
-
-  .level4 {
-    border-top: 5px solid #173B6E;
-    margin-top: -14px;
-  }
-
-  .level-font {
-    font-size: 50%;
-  }
-
-</style>

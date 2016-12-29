@@ -13,7 +13,7 @@ import {SiteCase} from './case';
 })
 export class DashboardComponent {
   cases = [
-    new SiteCase("111","sadfnajksdfajkdshfjakdhfsjkadhsfkjadshfajk","111","111","111","111","111","111","111","111","111","111","111","111","111","122"),
+    new SiteCase("2287","Car selling start-ups find there's limited on the showroom floor","111","111","111","111","111","111","111","111","111","111","111","111","111","122"),
     new SiteCase("111","asdfghajsdfgajhsdgfhajdsfahjdfgahjdfgahjdfg","111","111","111","111","111","111","111","111","111","111","111","111","111","122")
   ];
   constructor(private useCaseSercice: UseCaseService) {

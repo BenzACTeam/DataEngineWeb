@@ -3988,11 +3988,6 @@ label.valid {
   position: relative;
 }
 
-.view-mail-wrapper:hover {
-  border: 1px solid #00a2e2;
-  cursor: pointer;
-}
-
 .view-mail-wrapper header {
   color: #a2a2a2;
 }
@@ -4010,23 +4005,38 @@ label.valid {
 
 .view-mail-wrapper .view-mail-header {
   padding-top: 5px;
+  margin-bottom: 20px;
 }
 
-.view-mail-wrapper .view-mail-header img {
+.view-case .view-mail-header {
+  margin-bottom: 20px;
+}
+
+.view-mail-header img {
   margin: 0 70px 0 15px;
   width: 70px;
   height: 70px;
   border: 4px solid #00a2e2;
 }
 
-.view-mail-wrapper .view-mail-header .media-heading {
+.view-mail-header .media-heading {
   margin-top: 10px;
 }
 
+.view-mail-header .media-username {
+  margin-top: 25px;
+}
+
+.view-mail-header .media-username small {
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+.view-case .view-mail-reply,
 .view-mail-wrapper .view-mail-reply {
   position: absolute;
   top: 13px;
-  right: 15px;
+  right: 30px;
 }
 
 .view-mail-reply p {
@@ -4090,11 +4100,16 @@ label.valid {
   padding: 0;
 }
 
+.view-mail-wrapper:hover {
+  border: 1px solid #00a2e2;
+  cursor: pointer;
+}
+
 .view-mail-wrapper .view-mail-body .panel-body .label {
   margin-right: 8px;
   font-weight: normal;
   font-size: 18px;
-  width: 160px;
+  width: 180px;
   display: inline-block;
   text-align: right;
   border-radius: 0;
@@ -5326,5 +5341,160 @@ r {
   border: 1px solid #00a2e2;
   margin-bottom: 20px;
 }
+
+.panel.view-case {
+  padding: 20px;
+}
+
+.panel.view-case .panel-body {
+  padding: 0;
+}
+
+.view-case .panel-heading {
+  margin-bottom: 22px;
+}
+
+.view-case .panel-heading div {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.view-case .panel-heading .btn {
+  background-color: #fff;
+  color: #999;
+  border: 1px solid #999;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 60px;
+}
+
+.view-case .view-mail-reply a {
+  display: block;
+  font-size: 28px;
+}
+
+.view-case .view-mail-reply .btn-sm {
+  border: 1px solid #00a2e2;
+  width: 110px;
+  background-color: #fff;
+}
+
+.view-case p {
+  font-size: 18px;
+}
+
+.view-case h2 {
+  font-size: 22px;
+}
+
+.view-case .col-md-3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.view-case .panel-footer {
+  background: #fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.view-case .panel-footer .btn {
+  font-size: 18px;
+  padding-left: 0;
+}
+
+.view-case .panel-footer .col-md-12 .case_comment .btn {
+  font-size: 18px;
+  border: 1px solid #00a2e2;
+  color: #00a2e2;
+  background-color: #F0F3F3;
+  padding: 1px 19px;
+  margin-top: 12px;
+}
+
+.view-case .panel-footer .btn .fa-thumbs-o-up, .view-case .panel-footer .btn .fa-commenting-o {
+  padding-left: 0;
+}
+
+.view-case .panel-footer .col-md-12 {
+  background-color: #F0F3F3;
+  padding: 20px 26px;
+}
+
+.view-case .panel-footer img {
+  margin: 0 40px 0 0px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #00a2e2;
+}
+
+.view-case .row {
+  margin-top: 10px;
+}
+
+.view-case .row .col-md-4 span.doc {
+  background-image: url("assets/doc.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.view-case .row .col-md-4 p small {
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+.view-case .row .col-md-4 p .btn {
+  background-color: #fff;
+  font-size: 18px;
+  padding: 1px auto;
+  margin-left: 30px;
+}
+
+.view-case .row .col-md-4 p:hover .btn {
+  font-size: 18px;
+  border: 1px solid #00a2e2;
+  margin-left: 30px;
+}
+
+.view-case .panel-footer h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.view-case .panel-footer p {
+  font-size: 18px;
+  color: #1d2939;
+  margin-top: 5px;
+}
+
+.view-case .panel-footer h6 {
+  font-size: 16px;
+  color: #1d2939;
+}
+
+.view-case .panel-footer .media-body {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DBE1D7;
+}
+
+.view-case .panel-footer .media:last-child :nth-child(2) {
+  border: 0;
+}
+
+textarea.form-control{
+  resize: none;
+  font-size: 18px;
+}
+
+
+
 
 

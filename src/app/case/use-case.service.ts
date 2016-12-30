@@ -6,13 +6,10 @@ import {Injectable}    from '@angular/core';
 import {Headers, Http, ResponseContentType, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import {SiteCase} from "../home/case"
-import {DetailCase} from "../case/detail/detail-case"
-
-import any = jasmine.any;
-import {PagedList} from "../home/pagedlist";
-import {HttpHelper} from "../BaseService";
+import {HttpHelper} from "../http-helper";
 import Any = jasmine.Any;
+import {SiteCase} from "../home/case"
+import {PagedList} from "../home/pagedlist";
 
 @Injectable()
 export class UseCaseService {

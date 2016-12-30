@@ -8,13 +8,12 @@
 
     <ul class="nav navbar-nav navbar-left">
       <li class="toggle-navigation toggle-left">
-        <button class="sidebar-toggle" id="toggle-left" >
-        <i class="fa fa-bars"></i>
-      </button>
+        <button class="sidebar-toggle" (click)="toggleSidebar()">
+          <i class="fa fa-bars"></i>
+        </button>
 
       </li>
       <li class="hidden-xs hidden-sm">
-
         <input type="text" class="search" placeholder="Search...">
         <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
         </button>
@@ -81,40 +80,59 @@
     </ul>
   </header>
 
-  <div class="sidebar sidebar-left">
-    <nav>
-      <ul class="nav nav-pills nav-stacked">
-        <li>
-          <a routerLink="/dashboard" routerLinkActive="active">
-            <i class="fa  fa-fw fa-home"></i> Home
-          </a>
-        </li>
-        <li>
-          <a routerLink="/listcase" routerLinkActive="active">
-            <i class="fa  fa-fw fa-navicon"></i> Case List
-          </a>
-        </li>
-        <li>
-          <a routerLink="/detail" routerLinkActive="active">
-            <i class="fa  fa-fw fa-navicon"></i> Detail
-          </a>
-        </li>
+  <div class="sidebar sidebar-left" [ngStyle]="sidebarStyle">
 
-        <li>
-          <a routerLink="/test" routerLinkActive="active">
-            <i class="fa  fa-fw fa-navicon"></i> Test
+    <accordion class="accordion" [expandAll]="true">
+      <accordion-group>
+        <accordion-heading>
+          <a routerLink="/dashboard" routerLinkActive="active">
+            <i class="fa fa-fw fa-home"></i> Home
           </a>
-        </li>
-      </ul>
-    </nav>
+        </accordion-heading>
+      </accordion-group>
+      <accordion-group>
+        <accordion-heading>
+          <a href="javascript:void(0)">
+            <i class="fa fa-fw fa-navicon"></i> Value
+          </a>
+        </accordion-heading>
+        <a routerLink="/createcase" routerLinkActive="active">
+          Detail
+        </a>
+        <a routerLink="/createcase3" routerLinkActive="active">
+          Detail
+        </a>
+        <a routerLink="/createcase4" routerLinkActive="active">
+          Detail
+        </a>
+      </accordion-group>
+      <accordion-group>
+        <accordion-heading>
+          <a href="javascript:void(0)">
+            <i class="fa fa-fw fa-navicon"></i> Contribution BU
+          </a>
+        </accordion-heading>
+        <a routerLink="/createcase5" routerLinkActive="active">
+          Detail
+        </a>
+        <a routerLink="/createcase6" routerLinkActive="active">
+          Detail
+        </a>
+        <a routerLink="/createcase7" routerLinkActive="active">
+          Detail
+        </a>
+      </accordion-group>
+    </accordion>
+
     <div class="sidebar-btn">
       <a routerLink="/createcase" class="btn btn-primary btn-block">
         <span class="fa fa-plus" aria-hidden="true"></span> Create Case
       </a>
     </div>
+
   </div>
 
-  <section class="main-content-wrapper">
+  <section class="main-content-wrapper" [ngStyle]="mainContentStyle">
     <div class="pageheader">
       <h3>Hi Hellen</h3>
     </div>

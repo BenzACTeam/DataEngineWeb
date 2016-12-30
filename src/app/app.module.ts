@@ -5,7 +5,8 @@ import {HttpModule} from '@angular/http';
 
 import {AppRoutingModule}     from './app-routing.module';
 import {SelectModule}  from 'ng2-select';
-import {ProgressbarModule, AccordionModule} from 'ng2-bootstrap';
+import {ProgressbarModule} from 'ng2-bootstrap';
+import {AccordionModule} from 'ng2-accordion';
 import {FileUploadModule} from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
 import {Ng2DatetimePickerModule} from 'ng2-datetime-picker';
 
@@ -19,8 +20,8 @@ import {EditCaseComponent} from "./case/edit/edit-case.component";
 import {UserComponent} from "./user/user.component";
 import {ListSearchComponent} from "./search/list-search.component";
 
+import {HttpHelper} from "./http-helper";
 import {UseCaseService} from './case/use-case.service';
-import {HttpHelper} from "./BaseService";
 
 
 @NgModule({

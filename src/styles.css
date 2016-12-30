@@ -4087,8 +4087,6 @@ label.valid {
 .view-case .view-mail-reply,
 .view-mail-wrapper .view-mail-reply {
   position: absolute;
-  top: 6px;
-  right: 12px;
   top: 13px;
   right: 30px;
 }
@@ -5539,7 +5537,7 @@ div.config h4 a:hover {
   border: 0;
 }
 
-textarea.form-control{
+textarea.form-control {
   resize: none;
   font-size: 18px;
 }

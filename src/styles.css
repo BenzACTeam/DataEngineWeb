@@ -1020,10 +1020,6 @@ canvas {
   position: relative;
 }
 
-.pageheader h3 {
-  height: 22px;
-}
-
 .pageheader h2 {
   font-weight: 300;
   margin: 0;

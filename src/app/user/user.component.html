@@ -1,75 +1,60 @@
 <div class="row">
   <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="pull-right user_integral">
+        2046
+      </div>
+      <div class="panel-body media user_page">
 
-    <div class="panel ">
-      <div class="panel-body">
-        <div class="row ">
-          <div class="col-md-2">
-            <div class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class=" img-circle user-img" src="assets/avatar5.png">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="col-md-10">
-
-              <div class="col-md-4">
-                Philip Wang
-                <a href="#">
-                  <img class="img-circle user-img-level" src="assets/level.jpg">
-                </a>
-              </div>
-              <div class="col-md-7">
-                <div class="col-md-12">
-                  <div class="col-md-6">leader</div>
-                  <div class="col-md-6">sliver</div>
-                </div>
-                <div class="col-md-12">
-                  <progressbar [max]="max" [value]="dynamic" class="lv-loging">
-
-                  </progressbar>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-10">
-              Marketing & Development
-              <button class="user-edit-button" routerLink="/edit">Edit</button>
-            </div>
-            <div class="col-md-10">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              Beijing
-            </div>
-          </div>
-          <div class="col-md-2"></div>
-
+        <div class="media-left">
+          <img class="img-circle" src="assets/avatar5.png">
         </div>
+        <div class="media-body">
+          <header>
 
+            <div class="pull-left">
+              <span>Philip Wang</span>
+              <a href="#">
+                <img class="img-rounded " src="assets/level.jpg">
+              </a>
+            </div>
+            <div class="uesr_level pull-left">
+              <small>Copper </small> <small class="pull-right">Sliver </small>
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar"
+                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                  <span class="sr-only">20%</span>
+                </div>
+              </div>
+            </div>
+
+          </header>
+          <p class="pull-left">
+            Marketing & Development
+            <button class="btn btn-default" routerLink="/edit">Edit</button>
+          </p>
+          <div class="pull-left col-xs-12">
+            <i class="fa fa-map-marker " aria-hidden="true"></i>
+            Beijing
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 text-center user-setting">Setting</div>
+      <div class="text-center user_setting">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Setting
+      </div>
     </div>
-
   </div>
 
-  <div class="col-xs-12">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4">
 
-    </div>
+  <div class="col-xs-12 user_card_title">
+
+    <span>Created Cases</span>
+    <button class="btn btn-default" [routerLink]="[ '/usermore', 'createcase']" routerL>More</button>
   </div>
-  <div class="col-xs-12">
-    <div class="col-xs-12">
-      <div class="col-xs-2">Created Cases</div>
-      <div class="col-xs-1 col-xs-offset-9">
-        <button class="user-edit-button" [routerLink]="[ '/usermore', 'createcase']" routerL >More</button>
-
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="tab-content user-card-red">
+  <div class="col-xs-4 user_card ">
+    <div class="panel panel-default card_blue">
+      <div class="panel-body tab-content">
         <!-- ngRepeat: tab in tabs -->
         <h2> Raw denim you probably haven't heard of them jean </h2>
         <small>
@@ -88,8 +73,10 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-4">
-      <div class="tab-content user-card-yellow">
+  </div>
+  <div class="col-xs-4 user_card ">
+    <div class=" panel panel-default card_red">
+      <div class="panel-body tab-content">
         <!-- ngRepeat: tab in tabs -->
         <h2> Raw denim you probably haven't heard of them jean </h2>
         <small>
@@ -108,8 +95,81 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-4">
-      <div class="tab-content user-card-blue">
+  </div>
+  <div class="col-xs-4 user_card ">
+    <div class=" panel panel-default card_yellow">
+      <div class="panel-body tab-content">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 user_card_title">
+
+    <span>Liked Cases</span>
+    <button class="btn btn-default" [routerLink]="[ '/usermore', 'createcase']" routerL>More</button>
+  </div>
+  <div class="col-xs-4 user_card ">
+    <div class="panel panel-default card_blue">
+      <div class="panel-body tab-content">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 user_card ">
+    <div class=" panel panel-default card_red">
+      <div class="panel-body tab-content">
+        <!-- ngRepeat: tab in tabs -->
+        <h2> Raw denim you probably haven't heard of them jean </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <div>
+          <div>
+            <h2>Business Value</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+          <div>
+            <h2>Business Scenario</h2>
+            <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 user_card ">
+    <div class=" panel panel-default card_yellow">
+      <div class="panel-body tab-content">
         <!-- ngRepeat: tab in tabs -->
         <h2> Raw denim you probably haven't heard of them jean </h2>
         <small>
@@ -132,40 +192,103 @@
 </div>
 
 <style>
-  .user-img {
-    width: 83%;
-    border: 1px solid #000000;
+  .user_page .media-left {
+
+    padding: 40px
   }
 
-  .user-img-level {
-    width: 18%;
+  .user_page .media-body {
+    padding: 27px;
   }
 
-  .user-edit-button {
-    font-size: 80%;
-    color: #999;
-    border-radius: 10px;
+  .user_page .media-left img {
+    border: 2px solid #000000;
+    max-width: none;
+    width: 120px;
+    height: 120px;
+  }
+
+  .user_page .media-body .img-rounded {
+    width: 25px;
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+
+  .user_page .col-xs-12 {
+    margin-left: -13px;
+  }
+  .user_page .media-body i {
+    color: #00a2e2;
+  }
+
+  .user_page .media-body span {
+    font-size: 22px;
+  }
+
+  .user_card_title .btn,
+  .user_page .media-body .btn {
+    background-color: #ffffff;
+    color: #00a2e2;
+    border: 1px solid #00a2e2;
+    padding: 0px 21px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 33px;
+  }
+
+  .user_page .progress .progress-bar.progress-bar-info {
+    background-color: #00a2e2;
+  }
+
+  .user_page .progress {
+    height: 5px;
+    border-radius: 0px;
+    width: 250px;
+  }
+
+
+
+  .user_page .pull-left {
+    margin-right: 30px;
+  }
+
+  .user_integral {
+    font-size: 32px;
+    margin-top: 25px;
+    padding: 0 25px 0 50px;
+    background-color: #00a2e2;
+    color: #ffffff;
+    background: -webkit-linear-gradient(left, #ffffff, #00a2e2); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #ffffff, #00a2e2); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #ffffff, #00a2e2); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ffffff, #00a2e2); /* 标准的语法 */
+    position: absolute;
+    top: 13px;
+    right: 15px;
+  }
+
+  .user_setting {
     background-color: #fff;
-    border: 1px solid #999;
-    padding: 1px 16px;
+    border-top: 1px solid #F0F3F3;
   }
 
-  .user-card-red {
-    border: 1px solid #E22D39;
-    border-left: 5px solid #E22D39;
+  .user_card_title .btn {
+    float: right;
   }
 
-  .user-card-blue {
+  .user_card .card_blue {
     border: 1px solid #00a2e2;
     border-left: 5px solid #00a2e2;
   }
 
-  .user-card-yellow {
+  .user_card .card_red {
+    border: 1px solid #E22D39;
+    border-left: 5px solid #E22D39;
+  }
+
+  .user_card .card_yellow {
     border: 1px solid #FDA72D;
     border-left: 5px solid #FDA72D;
-  }
-  .user-setting{
-    background-color: #fff;
-    border-top: 1px solid #F0F3F3;
   }
 </style>

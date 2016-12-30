@@ -7,7 +7,6 @@ import { Site } from './menu';
 })
 export class AppComponent {
   menu = [
-
     new Site(1, 'Home',"dashboard"),
     new Site(1, 'Case List',"listcase"),
     new Site(2, 'Create Case',"createcase"),
@@ -16,6 +15,7 @@ export class AppComponent {
   ];
 
   mySite = this.menu[0];
+
   constructor() { }
 
   public disabled:boolean = false;
@@ -30,7 +30,4 @@ export class AppComponent {
     $event.stopPropagation();
     this.status.isopen = !this.status.isopen;
   }
-
-
-
 }

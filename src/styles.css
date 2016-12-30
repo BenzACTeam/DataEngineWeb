@@ -516,6 +516,7 @@ canvas {
   margin-top: 10px;
 }
 
+.sidebar-left .accordion a,
 .sidebar .nav-pills > li > a {
   padding: 9px 10px;
   font-size: 0.875em;
@@ -642,6 +643,8 @@ canvas {
   background-color: #00a2e2;
 }
 
+.sidebar-left .accordion a:focus,
+.sidebar-left .accordion a:hover,
 .sidebar-left a:focus,
 .sidebar-left a:hover {
   color: #fff;
@@ -693,12 +696,30 @@ canvas {
   margin-top: 0;
 }
 
-.sidebar-left .nav-pills > li > a {
+.sidebar-left .nav-pills > li > a,
+.sidebar-left .accordion a {
   display: block;
   border-bottom: 1px solid #3a494e;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  font-size: 18px !important;
+  font-weight: inherit !important;
+}
+
+.sidebar-left .accordion .panel,
+.sidebar-left .accordion .panel-default > .panel-heading {
+  border-color: transparent;
+  background: transparent;
+}
+
+.sidebar-left .accordion .panel-body {
+  padding: 0;
+  border: none !important;
+}
+
+.sidebar-left .accordion .panel-body a {
+  padding-left: 38px;
 }
 
 .sidebar + .main-content-wrapper {
@@ -4310,6 +4331,8 @@ label.valid {
   border-left: 6px solid #00a2e3;
 }
 
+.sidebar-left .accordion a:focus,
+.sidebar-left .accordion a:hover,
 .theme-default .sidebar-left .nav > li.open > a,
 .theme-default .sidebar-left .nav > li > a:hover {
   color: #1d2939;

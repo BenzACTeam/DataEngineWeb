@@ -2,14 +2,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {FileUploadModule} from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
+
 import {AppRoutingModule}     from './app-routing.module';
 import {SelectModule}  from 'ng2-select';
-import {ProgressbarModule, TabsModule} from 'ng2-bootstrap';
+import {ProgressbarModule} from 'ng2-bootstrap';
+import {AccordionModule} from 'ng2-accordion';
+import {FileUploadModule} from '../../node_modules/ng2-file-upload/components/file-upload/file-upload.module';
 import {Ng2DatetimePickerModule} from 'ng2-datetime-picker';
-
-
-import {UseCaseService} from './case/use-case.service';
 
 import {AppComponent} from './app.component';
 import {DashboardComponent}   from './home/dashboard.component';
@@ -20,7 +19,9 @@ import {TestComponent} from "./test/test";
 import {EditCaseComponent} from "./case/edit/edit-case.component";
 import {UserComponent} from "./user/user.component";
 import {ListSearchComponent} from "./search/list-search.component";
-import {UserMoreComponent} from "./user/more/user-more.component";
+
+import {HttpHelper} from "./http-helper";
+import {UseCaseService} from './case/use-case.service';
 
 
 @NgModule({
@@ -34,7 +35,6 @@ import {UserMoreComponent} from "./user/more/user-more.component";
     EditCaseComponent,
     UserComponent,
     ListSearchComponent,
-    UserMoreComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +45,9 @@ import {UserMoreComponent} from "./user/more/user-more.component";
     SelectModule,
     Ng2DatetimePickerModule,
     ProgressbarModule,
-    TabsModule
+    AccordionModule
   ],
-  providers: [UseCaseService],
+  providers: [HttpHelper, UseCaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

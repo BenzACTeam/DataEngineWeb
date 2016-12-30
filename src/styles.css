@@ -123,7 +123,6 @@ canvas {
   background: #66cac4;
   -webkit-transition: -webkit-transform 0.3s, width 1s;
   -moz-transition: width 1s;
-  -o-transform: width 1s;
   transition: transform .3s, width 1s;
   -webkit-transform: translateY(-50px);
   transform: translateY(-50px);
@@ -195,7 +194,6 @@ canvas {
   cursor: pointer;
   float: left;
   background-color: transparent;
-  border-radius: none;
   border: none;
 }
 
@@ -4066,7 +4064,6 @@ label.valid {
   margin-bottom: 20px;
 }
 
-.view-mail-header img {
 .view-mail-wrapper .view-mail-header img {
   margin: 0 70px 0 15px;
   width: 70px;

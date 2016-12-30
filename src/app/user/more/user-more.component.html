@@ -1,30 +1,124 @@
 <div class="row">
-
-  <div class="panel-body">
-    <tabset [justified]="true">
-      <tab heading="Create Cases" >
-        <div class="panel view-mail-wrapper">
-          <div class="panel-body panel-body-usermore">
-            <div class="row view-mail-header">
-              </div>
-            </div>
-          </div>
-      </tab>
-      <tab heading="Liked Cases">
-
-
-
-      </tab>
-    </tabset>
+  <div class="col-xs-12">
+    <ul class="nav nav-tabs user_more_tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#">Created List</a></li>
+      <li role="presentation"><a href="#">Liked Cases</a></li>
+    </ul>
   </div>
+  <div class="col-xs-12  user_card_btn">
+    <div class="panel panel-default card_red">
+      <div class="panel-body">
+        <h2> Raw denim you probably haven't heard of them jean
+          <button class="btn btn-default full-right" [routerLink]="[ '/usermore', 'createcase']" routerL>Edit</button>
+        </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <h2>Business Value
+          <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+        </h2>
+        <h2>Business Scenario</h2>
+        <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-12  user_card_btn">
+    <div class="panel panel-default card_yellow">
+      <div class="panel-body">
+        <h2> Raw denim you probably haven't heard of them jean
+          <button class="btn btn-default full-right" [routerLink]="[ '/usermore', 'createcase']" routerL>Edit</button>
+        </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <h2>Business Value
+          <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+        </h2>
+
+        <h2>Business Scenario</h2>
+        <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-xs-12  user_card_btn">
+    <div class="panel panel-default card_red">
+      <div class="panel-body">
+        <h2> Raw denim you probably haven't heard of them jean
+          <button class="btn btn-default full-right" [routerLink]="[ '/usermore', 'createcase']" routerL>Edit</button>
+        </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <h2>Business Value
+          <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+        </h2>
+        <h2>Business Scenario</h2>
+        <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 user_card user_card_btn">
+    <div class="panel panel-default card_blue">
+      <div class="panel-body">
+        <h2> Raw denim you probably haven't heard of them jean
+          <button class="btn btn-default full-right" [routerLink]="[ '/usermore', 'createcase']" routerL>Edit</button>
+        </h2>
+        <small>
+          <i class="fa fa-clock-o"></i> 2012-12-12
+        </small>
+        <h2>Business Value
+          <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+        </h2>
+        <h2>Business Scenario</h2>
+        <small>Raw denim you probably haven't heard of them jean shorts Austin.</small>
+      </div>
+    </div>
+  </div>
+
 </div>
 <style>
-  .panel-body-usermore{
-    margin-top: 10px;
+  .user_more_tabs {
+    margin-bottom: 10px;
+  }
 
+  .user_more_tabs .active a {
+    background-color: #000000;
+    color: #ffffff;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  .user_card_btn .card_blue {
+    border: 1px solid #00a2e2;
+    border-left: 5px solid #00a2e2;
+  }
+
+  .user_card_btn .card_red {
+    border: 1px solid #E22D39;
+    border-left: 5px solid #E22D39;
+  }
+
+  .user_card_btn .card_yellow {
+    border: 1px solid #FDA72D;
+    border-left: 5px solid #FDA72D;
+  }
+
+  .user_card_btn .btn {
+    background-color: #ffffff;
+    color: #00a2e2;
+    border: 1px solid #00a2e2;
+    padding: 0px 18px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    float: right;
+  }
+
+  .user_card_btn h2 small {
+    margin-left: 10px;
   }
 
 </style>
-
-
-

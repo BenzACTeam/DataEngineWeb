@@ -23,7 +23,6 @@ import {ListSearchComponent} from "./search/list-search.component";
 import {HttpHelper} from "./http-helper";
 import {UseCaseService} from './case/use-case.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -4077,7 +4077,7 @@ label.valid {
 }
 
 .view-mail-header .media-username {
-  margin-top: 25px;
+  margin-top: 18px;
 }
 
 .view-mail-header .media-username small {
@@ -4570,7 +4570,6 @@ div.config h4 a:hover {
   right: 30px;
 }
 
-
 .view-case .view-mail-reply a {
   display: block;
   font-size: 28px;
@@ -4580,10 +4579,6 @@ div.config h4 a:hover {
   border: 1px solid #00a2e2;
   width: 110px;
   background-color: #fff;
-}
-
-.view-case p {
-  font-size: 18px;
 }
 
 .view-case h2 {
@@ -4604,17 +4599,14 @@ div.config h4 a:hover {
   border-radius: 0;
   padding: 0;
   border: none;
-  font-size: 12px;
   color: #ccc;
 }
 
 .view-case .panel-footer .btn {
-  font-size: 18px;
   padding-left: 0;
 }
 
-.view-case .panel-footer .col-md-12 .case_comment .btn {
-  font-size: 18px;
+.view-case .panel-footer .view_case_comment .case_comment .btn {
   border: 1px solid #00a2e2;
   color: #00a2e2;
   background-color: #F0F3F3;
@@ -4626,7 +4618,7 @@ div.config h4 a:hover {
   padding-left: 0;
 }
 
-.view-case .panel-footer .col-md-12 {
+.view-case .panel-footer .view_case_comment {
   background-color: #F0F3F3;
   padding: 20px 26px;
 }
@@ -4650,35 +4642,29 @@ div.config h4 a:hover {
 
 .view-case .row .col-md-4 p small {
   margin-left: 30px;
-  font-size: 18px;
 }
 
 .view-case .row .col-md-4 p .btn {
   background-color: #fff;
-  font-size: 18px;
-  padding: 1px auto;
   margin-left: 30px;
+  border: 1px solid #f9f9f9;
 }
 
 .view-case .row .col-md-4 p:hover .btn {
-  font-size: 18px;
   border: 1px solid #00a2e2;
   margin-left: 30px;
 }
 
 .view-case .panel-footer h4 {
-  font-size: 18px;
   font-weight: bold;
 }
 
 .view-case .panel-footer p {
-  font-size: 18px;
   color: #1d2939;
   margin-top: 5px;
 }
 
-.view-case .panel-footer h6 {
-  font-size: 16px;
+.view-case .panel-footer small {
   color: #1d2939;
 }
 
@@ -4689,6 +4675,10 @@ div.config h4 a:hover {
 
 .view-case .panel-footer .media:last-child :nth-child(2) {
   border: 0;
+}
+
+.view-case .panel-footer {
+  text-transform: none;
 }
 
 

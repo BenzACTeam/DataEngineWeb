@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="panel panel-solid-info widget-mini">
+    <div class="panel panel-solid-info widget-mini widget-create">
       <div class="panel-body">
         <span class="icon"><i class="fa fa-plus"></i></span>
         <div class="inf">
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="panel panel-solid-info widget-mini">
+    <div class="panel panel-solid-info widget-mini widget-thumb">
       <div class="panel-body">
         <span class="icon"><i class="fa fa-thumbs-o-up"></i></span>
         <div class="inf">
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="panel panel-solid-info widget-mini">
+    <div class="panel panel-solid-info widget-mini widget-comment">
       <div class="panel-body">
         <span class="icon"><i class="fa fa-comment-o"></i></span>
         <div class="inf">
@@ -33,12 +33,12 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="panel panel-solid-info widget-mini">
+    <div class="panel panel-solid-info widget-mini widget-browse">
       <div class="panel-body">
-        <span class="icon"><i class="fa fa-share-square-o"></i></span>
+        <span class="icon"><i class="fa fa-eye"></i></span>
         <div class="inf">
           <span class="total text-center">1,960</span>
-          <span class="title text-center">Sharing Cases</span>
+          <span class="title text-center">Browse Cases</span>
         </div>
       </div>
     </div>
@@ -49,69 +49,63 @@
   <h3>Latest Case</h3>
   <small>Checkout your latest cases</small>
 </div>
-
 <div class="row">
   <div class="col-xs-12">
-    <div class="panel view-mail-wrapper" *ngFor="let case of pagedList.list" [routerLink]="[ '/detail', case.id]"
-         routerL>
+    <div class="panel view-mail-wrapper" *ngFor="let case of pagedList.list" [routerLink]="['/detail', case.id]">
       <div class="panel-body">
-        <div class="row view-mail-header">
-          <div class="col-md-8 ">
-            <div class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object img-circle" src="assets/avatar5.png">
-                </a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Adam Larbert</h4>
-                <small>Design & Development</small>
-              </div>
+        <div class="view-mail-header">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object img-circle" src="assets/avatar5.png">
+              </a>
+            </div>
+            <div class="media-body">
+              <h3 class="media-heading">Adam Larbert</h3>
+              <small>Design & Development</small>
             </div>
           </div>
         </div>
+
+        <div class="panel view-mail-body">
+          <div class="panel-heading">{{case.subject}}</div>
+          <div class="panel-body">
+            <p>
+              <span class="label ">Business Value</span>{{case.value}}
+            </p>
+            <p>
+              <span class="label ">Business Scenario</span>{{case.scenario}}
+            </p>
+            <p>
+              <span class="label ">Business Result</span>{{case.resultText}}
+            </p>
+            <p>
+              <span class="label ">Analysis Method and Result</span>{{case.resultText}}
+            </p>
+          </div>
+          <div class="panel-footer">
+            <span class="help-block"><i class="fa fa-clock-o"></i>{{case.fromDate}}</span>
+            <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> 2341</a>
+            <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> 231123</a>
+            <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> 98842</a>
+          </div>
+        </div>
+
         <div class="view-mail-reply pull-right">
           <button class="btn btn-sm btn-info">Clone</button>
           <a class="btn" href="javascript:void(0);" role="button">
             <p>2287</p><i class="fa fa-eye"></i>
           </a>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel view-mail-body">
-              <div class="panel-heading">{{case.subject}}</div>
-              <div class="panel-body">
-                <p>
-                  <span class="label ">Business Value:</span>{{case.value}}
-                </p>
-                <p>
-                  <span class="label ">Business Scenario:</span>{{case.scenario}}
-                </p>
-                <p>
-                  <span class="label ">Business Result:</span>{{case.resultText}}
-                </p>
-                <p>
-                  <label>Reference:</label>
-                  <small>This line of text is meant to be treated as fine print.</small>
-                </p>
-              </div>
-              <div class="panel-footer">
-                <span class="help-block"><i class="fa fa-clock-o"></i>{{case.fromDate}}</span>
-                <a href="#" class="btn btn-sm"><i class="fa fa-thumbs-o-up"></i> Like</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-comment-o"></i> Comment</a>
-                <a href="#" class="btn btn-sm"><i class="fa fa-share"></i> Share</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-12 text-center">
     <a class="btn btn-default btn-block show-more" (click)="showMore();"
-       *ngIf="pagedList.hasNextPage"><span>show more </span><i class="fa fa-angle-double-down"
+       *ngIf="pagedList.hasNextPage"><span>Show more </span><i class="fa fa-angle-double-down"
                                                                aria-hidden="true"></i></a>
   </div>
 </div>

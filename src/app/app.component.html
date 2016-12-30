@@ -8,13 +8,12 @@
 
     <ul class="nav navbar-nav navbar-left">
       <li class="toggle-navigation toggle-left">
-        <button class="sidebar-toggle" id="toggle-left">
+        <button class="sidebar-toggle" (click)="toggleSidebar()">
           <i class="fa fa-bars"></i>
         </button>
 
       </li>
       <li class="hidden-xs hidden-sm">
-
         <input type="text" class="search" placeholder="Search...">
         <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
         </button>
@@ -81,7 +80,7 @@
     </ul>
   </header>
 
-  <div class="sidebar sidebar-left">
+  <div class="sidebar sidebar-left" [ngStyle]="sidebarStyle">
 
     <accordion class="accordion" [expandAll]="true">
       <accordion-group>
@@ -93,33 +92,33 @@
       </accordion-group>
       <accordion-group>
         <accordion-heading>
-          <a routerLink="/createcase" routerLinkActive="active">
+          <a href="javascript:void(0)">
             <i class="fa fa-fw fa-navicon"></i> Value
           </a>
         </accordion-heading>
         <a routerLink="/createcase" routerLinkActive="active">
           Detail
         </a>
-        <a routerLink="/createcase" routerLinkActive="active">
+        <a routerLink="/createcase3" routerLinkActive="active">
           Detail
         </a>
-        <a routerLink="/createcase" routerLinkActive="active">
+        <a routerLink="/createcase4" routerLinkActive="active">
           Detail
         </a>
       </accordion-group>
       <accordion-group>
         <accordion-heading>
-          <a routerLink="/createcase" routerLinkActive="active">
+          <a href="javascript:void(0)">
             <i class="fa fa-fw fa-navicon"></i> Contribution BU
           </a>
         </accordion-heading>
-        <a routerLink="/createcase" routerLinkActive="active">
+        <a routerLink="/createcase5" routerLinkActive="active">
           Detail
         </a>
-        <a routerLink="/createcase" routerLinkActive="active">
+        <a routerLink="/createcase6" routerLinkActive="active">
           Detail
         </a>
-        <a routerLink="/createcase" routerLinkActive="active">
+        <a routerLink="/createcase7" routerLinkActive="active">
           Detail
         </a>
       </accordion-group>
@@ -133,7 +132,7 @@
 
   </div>
 
-  <section class="main-content-wrapper">
+  <section class="main-content-wrapper" [ngStyle]="mainContentStyle">
     <div class="pageheader">
       <h3>Hi Hellen</h3>
     </div>

@@ -14,7 +14,7 @@ import {PagedList} from "../home/pagedlist";
 @Injectable()
 export class UseCaseService {
   private caseListUrl = '/usecase/search/';  // URL to web api
-  private createUrl = "/usecase/create?";
+  private createUrl = "/usecase/create";
   private detailUrl = "/usecase/detail/";
 
   constructor(private httpHelper: HttpHelper) {
@@ -24,22 +24,16 @@ export class UseCaseService {
     return this.httpHelper.post(this.caseListUrl + pageNo, paramter).then(cases => cases);
   }
 
-  // postCreateList(caseJson): void {
-  //   alert(caseJson);
-  //   this.http
-  //     .post(this.createUrl, caseJson, {headers: this.headers}).toPromise()
-  //
-  //     .catch(this.handleError);
-  // }
-  //
   getDetail(caseId:string): Promise<SiteCase> {
 
     return this.httpHelper.get(this.detailUrl+caseId).then(siteCase => siteCase );
   }
-  //
-  // private handleError(error: any): Promise<any> {
-  //   console.error('An error occurred', error); // for demo purposes only
-  //   return Promise.reject(error.message || error);
-  // }
+
+  postCreateList(caseJson): void {
+    // alert(caseJson);
+    this.httpHelper
+      .post(this.createUrl, caseJson);
+  }
+
 
 }

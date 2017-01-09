@@ -7,45 +7,135 @@ import {CreateCase} from "./create-case";
 import {UseCaseService} from '../use-case.service';
 import {FileUploader} from '../../../../node_modules/ng2-file-upload';
 import * as moment from 'moment';
-import {FormBuilder, FormGroup} from "@angular/forms";
 
 
 // webpack html imports
 let template = require('./create-case.component.html');
 
 // const URL = '/api/';
- const URL = 'http://127.0.0.1:8080/upload';
+const URL = 'http://10.255.252.54:8080/upload';
 
 @Component({
   selector: 'content', template
 })
 
 export class CreateCaseComponent {
-  date1 = new Date("2015-01-01");
+  analysisMethodResult = true;
+  validationMethodResult = true;
+  implementationMethodResult = true;
 
-  // dataForm: FormGroup;
-  //
-  // constructor(private formBuilder: FormBuilder) {
-  // }
-  //
-  // ngOnInit() {
-  //   this.dataForm = this.formBuilder.group({
-  //     date: ''
-  //   });
-  // }
-  items_multiple: Array<any> = [
-    {id: 1, text: 'Option #1'},
-    {id: 2, text: 'Option #2'},
-    {id: 3, text: 'Option #3'},
-    {id: 4, text: 'Option #4'},
-    {id: 5, text: 'Option #5'},
-    {id: 6, text: 'Option #6'},
-    {id: 7, text: 'Option #7'},
-    {id: 8, text: 'Option #8'},
-    {id: 9, text: 'Option #9'},
-    {id: 10, text: 'Option #10'},
-  ];
+  isBtn1Clicked = false;
+  isBtn2Clicked = false;
+  isBtn3Clicked = false;
+  isBtn4Clicked = false;
 
+  isPackUp = true;
+  isFillOut = false;
+
+  active = true;
+  fromDate = "";
+  toDate = "";
+  values = ['Increase business revenue', 'Optimize business eficiency', 'Operation KPI Tracking'];
+  data_Sources = ['CDM', 'DMS', 'Data Layer', 'LMS'];
+  data_Analysis_Models = ['C4.5', 'K-means', 'Support vector machines', 'Apriori', 'EM', 'PageRank', 'AdaBoost', 'kNN', 'Naive Bayes', 'CART'];
+  contribution_BU_S = ['Sales', 'After sales', 'Marketing'];
+  stages = ['SalIdea generation', 'Analysis', 'Validation', 'Implementationes'];
+  model = new CreateCase(
+    'Subject',
+    this.values[0],
+    'Business Scenario');
+
+  generation() {
+    this.analysisMethodResult = true;
+    this.validationMethodResult = true;
+    this.implementationMethodResult = true;
+    this.isBtn1Clicked = false;
+    this.isBtn2Clicked = true;
+    this.isBtn3Clicked = true;
+    this.isBtn4Clicked = true;
+    this.model.dataSource = "";
+    this.model.dataTypeDescription = "";
+    this.model.analysisModel = "";
+    this.model.analysisMethodResult = "";
+    this.model.validationMethodResult = "";
+    this.model.implementationMethodResult = "";
+  }
+
+  validation() {
+    this.analysisMethodResult = false;
+    this.validationMethodResult = true;
+    this.implementationMethodResult = true;
+    this.isBtn1Clicked = true;
+    this.isBtn2Clicked = false;
+    this.isBtn3Clicked = true;
+    this.isBtn4Clicked = true;
+    this.model.validationMethodResult = "";
+    this.model.implementationMethodResult = "";
+  }
+
+  analysis() {
+    this.analysisMethodResult = false;
+    this.validationMethodResult = false;
+    this.implementationMethodResult = true;
+    this.isBtn1Clicked = true;
+    this.isBtn2Clicked = true;
+    this.isBtn3Clicked = false;
+    this.isBtn4Clicked = true;
+    this.model.implementationMethodResult = "";
+  }
+
+  implemetation() {
+    this.analysisMethodResult = false;
+    this.validationMethodResult = false;
+    this.implementationMethodResult = false;
+    this.isBtn1Clicked = true;
+    this.isBtn2Clicked = true;
+    this.isBtn3Clicked = true;
+    this.isBtn4Clicked = false;
+  }
+
+  fillOutMoreInfo(){
+    this.analysisMethodResult = false;
+    this.validationMethodResult = false;
+    this.implementationMethodResult = false;
+    this.isFillOut = true;
+    this.isPackUp = false;
+  }
+
+  packUp(){
+    this.analysisMethodResult = true;
+    this.validationMethodResult = true;
+    this.implementationMethodResult = true;
+    this.model.dataSource = "";
+    this.model.dataTypeDescription = "";
+    this.model.analysisModel = "";
+    this.model.analysisMethodResult = "";
+    this.model.validationMethodResult = "";
+    this.model.implementationMethodResult = "";
+    this.isFillOut = false;
+    this.isPackUp = true;
+  }
+
+  dataSourceValue(value: any) {
+    this.model.dataSource = JSON.stringify(value);
+  }
+
+  dataAnalysisModelValue(value: any) {
+    this.model.analysisModel = JSON.stringify(value);
+  }
+
+  // TODO: 完成后移除
+  get submitJson() {
+    this.model.fromDate = this.fromDate;
+    this.model.toDate = this.toDate;
+    return JSON.stringify(this.model);
+  }
+
+  public useCaseSercice: UseCaseService;
+
+  onSubmit() {
+    this.useCaseSercice.postCreateList(JSON.stringify(this.model));
+  }
 
   public uploader: FileUploader = new FileUploader({url: URL});
 
@@ -77,7 +167,6 @@ export class CreateCaseComponent {
 
   }
 
-
   public fileOverBase(e: any): void {
     console.log("fileOverBase");
     this.hasBaseDropZoneOver = e;
@@ -85,120 +174,16 @@ export class CreateCaseComponent {
 
   public fileOverAnother(e: any): void {
     console.log("拖拽成功");
-    this.hasAnotherDropZoneOver = e;
+    // this.hasAnotherDropZoneOver = e;
   }
 
-
-  values = ["", 'Increase business revenue', 'Optimize business eficiency'];
-  data_Sources = ["", 'CDM', 'DMS', 'Data Layer', 'LMS'];
-  data_Analysis_Models = ['', 'C4.5', 'K-means', 'Support vector machines', 'Apriori',
-    'EM', 'PageRank', 'AdaBoost', 'kNN', 'Naive Bayes', 'CART'];
-  contribution_BU_S = ['', 'Sales', 'After sales', 'Marketing'];
-  stages = ['', 'SalIdea generation', 'Analysis', 'Validation', 'Implementationes'];
-
-  submitted = false;
-  model = new CreateCase('Subject', this.values[0], 'Business Scenario', 'result', this.data_Sources[0],
-    'data_type_description', this.data_Analysis_Models[0], this.contribution_BU_S[0],
-    this.stages[0], "2010-10-12 12:12:10", "2016-12-12 12:12:10 ", 'console', ' I need help', "");
-
-  // constructor(private useCaseSercice: UseCaseService) {
-  //
-  // }
-  //
-  // onSubmit() {
-  //   // this.submitted = true;
-  //   this.useCaseSercice.postCreateList(JSON.stringify(this.model));
-  //   // active = true;
-  //   this.submitted = false;
-  // }
-
-  // TODO: 完成后移除
-  get submitJson() {
-    return JSON.stringify(this.model);
+  public fileDropOver(e: any): void {
+    this.uploadFile();
   }
 
-  active = true;
-  // newSite() {
-  //   this.model = new Site(5, '', '');
-  //   this.active = false;
-  //   setTimeout(() => this.active = true, 0);
-  // }
+  isSelectUpload = false;
+  selectUpload(event:any){
 
-
-  public dt: Date = new Date();
-  public minDate: Date = void 0;
-  public events: any[];
-  public tomorrow: Date;
-  public afterTomorrow: Date;
-  public dateDisabled: {date: Date, mode: string}[];
-  public formats: string[] = ['DD-MM-YYYY', 'YYYY/MM/DD', 'DD.MM.YYYY',
-    'shortDate'];
-  public format: string = this.formats[0];
-  public dateOptions: any = {
-    formatYear: 'YY',
-    startingDay: 1
-  };
-  private opened: boolean = false;
-
-  public constructor() {
-    (this.tomorrow = new Date()).setDate(this.tomorrow.getDate() + 1);
-    (this.afterTomorrow = new Date()).setDate(this.tomorrow.getDate() + 2);
-    (this.minDate = new Date()).setDate(this.minDate.getDate() - 1000);
-    (this.dateDisabled = []);
-    this.events = [
-      {date: this.tomorrow, status: 'full'},
-      {date: this.afterTomorrow, status: 'partially'}
-    ];
+    this.isSelectUpload = true;
   }
-
-  public getDate(): number {
-    return this.dt && this.dt.getTime() || new Date().getTime();
-  }
-
-  public today(): void {
-    this.dt = new Date();
-  }
-
-  public d20090824(): void {
-    this.dt = moment('2009-08-24', 'YYYY-MM-DD')
-      .toDate();
-  }
-
-  public disableTomorrow(): void {
-    this.dateDisabled = [{date: this.tomorrow, mode: 'day'}];
-  }
-
-  // todo: implement custom class cases
-  public getDayClass(date: any, mode: string): string {
-    if (mode === 'day') {
-      let dayToCheck = new Date(date).setHours(0, 0, 0, 0);
-
-      for (let event of this.events) {
-        let currentDay = new Date(event.date).setHours(0, 0, 0, 0);
-
-        if (dayToCheck === currentDay) {
-          return event.status;
-        }
-      }
-    }
-    return '';
-  }
-
-  public disabled(date: Date, mode: string): boolean {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-  }
-
-  public open(): void {
-    this.opened = !this.opened;
-  }
-
-  public clear(): void {
-    this.dt = void 0;
-    this.dateDisabled = undefined;
-  }
-
-  public toggleMin(): void {
-    this.dt = new Date(this.minDate.valueOf());
-  }
-
 }

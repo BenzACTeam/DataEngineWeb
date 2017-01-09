@@ -1,253 +1,200 @@
-<div class="row">
+<div class="row create-case">
   <div class="col-xs-12">
-    <div class="panel panel-default">
-
-      <div class="panel-body editview" [hidden]="submitted">
-
-        <form class="form-horizontal form-border" id="form" novalidate="novalidate" *ngIf="active"
-              (ngSubmit)="onSubmit()" #siteForm="ngForm">
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Subject</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="input1"
-
-                     required
-                     [(ngModel)]="model.subject" name="subject"
-                     #name="ngModel"
-              >
-              <div [hidden]="name.valid || name.pristine"
-                   class="alert alert-danger">
-                Subject is necessary
+    <div class="panel">
+      <div class="panel-heading">
+        <h1>Please choose the stage before you create case</h1>
+      </div>
+      <div class="panel-body">
+        <div class="btn-group btn-group-lg ">
+          <span>
+            <button type="button" class="btn btn-default btn1" (click)="generation();" [class.grey]="isBtn1Clicked"><span>1</span>Idea generation</button>
+            <span class="btn1-p">
+              <span class="triangle-up"></span>
+              <span> Generate a conception on what you want to analysis or what result you intend to achieve.</span>
+            </span>
+          </span>
+          <span>
+             <button type="button" class="btn btn-default btn2" (click)="validation();" [class.grey]="isBtn2Clicked"><span>2</span>Validation</button>
+             <span class="btn2-p">
+               <span class="triangle-up"></span>
+               <span>Take an action on analysising to achieve the result based on various relevant data and model.</span>
+             </span>
+          </span>
+          <span>
+            <button type="button" class="btn btn-default btn3" (click)="analysis();" [class.grey]="isBtn3Clicked"><span>3</span>Analysis</button>
+            <span class="btn3-p">
+              <span class="triangle-up"></span>
+              <span>Validate the analysis result insight.</span>
+            </span>
+          </span>
+          <span>
+           <button type="button" class="btn btn-default btn4" (click)="implemetation();" [class.grey]="isBtn4Clicked"><span>4</span>Implementation</button>
+             <span class="btn4-p">
+                <span class="triangle-up"></span>
+                <span>Apply to appropriate business scenario.</span>
+             </span>
+          </span>
+        </div>
+        <div class="row create-case-form">
+          <div class="col-xs-12">
+            <div class="panel">
+              <div class="panel-body editview">
+                <form class="form-horizontal form-border" id="form" novalidate="novalidate" *ngIf="active"
+                      (ngSubmit)="onSubmit()" #siteForm="ngForm">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="subject">Subject:</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="subject" required [(ngModel)]="model.subject" name="subject" #name="ngModel">
+                      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        Subject is necessary
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="value">Value:</label>
+                    <div class="col-sm-6">
+                      <select class="form-control" required [(ngModel)]="model.value" name="value" id="value">
+                        <option *ngFor="let val of values" [value]="val">{{val}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="scenario">Business Scenario:</label>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" required [(ngModel)]="model.scenario" name="scenario" id="scenario"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="analysisMethodResult">
+                    <label class="col-sm-3 control-label" for="data-source">Data Source:</label>
+                    <div class="col-sm-6">
+                      <ng-select [multiple]=true [items]="data_Sources" placeholder="Please select" id="data-source" (data)="dataSourceValue($event)"></ng-select>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="analysisMethodResult">
+                    <label class="col-sm-3 control-label" for="data-type-description">Data Type Description:</label>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" [(ngModel)]="model.dataTypeDescription" name="dataTypeDescription" id="data-type-description"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="analysisMethodResult">
+                    <label class="col-sm-3 control-label" for="data-analysis-model">Data Analysis Model:</label>
+                    <div class="col-sm-6">
+                      <ng-select [multiple]=true [items]="data_Analysis_Models" placeholder="Please select" id="data-analysis-model" (data)="dataAnalysisModelValue($event)"></ng-select>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="analysisMethodResult">
+                    <label class="col-sm-3 control-label" for="analysis-method-result">Analysis Method and Result:</label>
+                    <div class="col-sm-6">
+                      <textarea ng2FileDrop
+                                [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
+                                (fileOver)="fileOverAnother($event)"
+                                (onFileDrop) = "fileDropOver($event)"
+                                [uploader]="uploader"
+                                class="form-control" [(ngModel)]="model.analysisMethodResult"
+                        name="analysisMethodResult" id="analysis-method-result"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="validationMethodResult">
+                    <label class="col-sm-3 control-label" for="validation-method-result">Validation Method and Result:</label>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" [(ngModel)]="model.validationMethodResult"
+                        name="validationMethodResult" id="validation-method-result"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group" [hidden]="implementationMethodResult">
+                    <label class="col-sm-3 control-label" for="implementation-method-result">Implementation Method and Result:</label>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" [(ngModel)]="model.implementationMethodResult"
+                        name="implementationMethodResult" id="implementation-method-result"></textarea>
+                    </div>
+                  </div>
+                  <a href="javascript:void(0);" (click)="fillOutMoreInfo();" [hidden]="isFillOut"><span class="fill-out">Fill out more information</span><span class="triangle-down"></span></a>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="contribution-BU">Contribution BU:</label>
+                    <div class="col-sm-6">
+                      <select class="form-control"
+                              [(ngModel)]="model.contributionBU" name="contributionBU" id="contribution-BU">
+                        <option *ngFor="let c_bu of contribution_BU_S" [value]="c_bu">{{c_bu}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="stage">Stage:</label>
+                    <div class="col-sm-6">
+                      <select class="form-control"
+                              [(ngModel)]="model.stage" name="stage" id="stage">
+                        <option *ngFor="let stage of stages" [value]="stage">{{stage}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Time Frame:</label>
+                    <div class="col-sm-3">
+                      <div class="col-sm-2 control-label">
+                        from
+                      </div>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control "
+                               [(ngModel)]="fromDate" name="fromDate" ng2-datetime-picker date-only="true"
+                               >
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="col-sm-2 control-label">
+                        to
+                      </div>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control " placeholder=""
+                               [(ngModel)]="toDate" name="toDate" ng2-datetime-picker date-only="true">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="contact">Contact:</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" placeholder=""
+                             [(ngModel)]="model.contact" name="contact" id="contact"
+                      >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label need-help" for="help">
+                      <i class="fa fa-hourglass-o" aria-hidden="true"></i>
+                      I need help:
+                    </label>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" [(ngModel)]="model.help" name="help" id="help"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-6">
+                      <input type="file"
+                             ng2FileSelect [uploader]="uploader" multiple
+                             (change)="selectedFileOnChanged($event)"
+                      />
+                      <a href="#" (click)="selectUpload($event)" ><i class="fa fa-upload"></i><span>Upload</span></a>
+                    </div>
+                  </div>
+                  <a href="javascript:void(0);" (click)="packUp();" [hidden]="isPackUp"><span class="triangle-up"></span><span class="pack-up">Pack up</span></a>
+                  <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-6">
+                      <button type="submit" class="btn btn-info btn-lg" [disabled]="!siteForm.form.valid">Submit
+                      </button>
+                    </div>
+                  </div>
+                  <!--{{submitJson}}-->
+                </form>
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Value</label>
-            <div class="col-sm-6">
-              <select class="form-control "
-                      required
-                      [(ngModel)]="model.value" name="value"
-                      style="background: url('http://ourjs.github.io/static/2015/arrow.png') no-repeat scroll right center transparent;">
-                <option *ngFor="let val of values" [value]="val">{{val}}</option>
-
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Business Scenario</label>
-            <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.scenario" name="b_scenario"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Result</label>
-            <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.result" name="result"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Data Source</label>
-            <div class="col-sm-6">
-              <ng-select [multiple]=true [items]="data_Sources" placeholder="Please select"></ng-select>
-              <!--<select class="form-control"-->
-              <!--required-->
-              <!--[(ngModel)]="model.dataSource" name="data_source"-->
-              <!--&gt;-->
-              <!--<option *ngFor="let d_source of data_Sources" [value]="d_source">{{d_source}}</option>-->
-
-              <!--</select>-->
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Data Type Description</label>
-            <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.dataTypeDescription"
-                        name="data_type_description"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Data Analysis Model</label>
-            <div class="col-sm-6">
-              <ng-select [multiple]=true [items]="data_Analysis_Models" placeholder="Please select"></ng-select>
-              <!--<select class="form-control"-->
-              <!--[(ngModel)]="model.analysisModel" name="data_analysis_model"-->
-              <!--&gt;-->
-              <!--<option *ngFor="let d_a_model of data_Analysis_Models" [value]="d_a_model">{{d_a_model}}</option>-->
-
-              <!--</select>-->
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Analysis Method Descrption</label>
-            <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.analysisMethodDescrption"
-                        name="analysis_method_descrption"></textarea>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Contribution BU</label>
-            <div class="col-sm-6">
-              <select class="form-control"
-                      [(ngModel)]="model.contributionBU" name="contribution_bu"
-              >
-                <option *ngFor="let c_bu of contribution_BU_S" [value]="c_bu">{{c_bu}}</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Stage</label>
-            <div class="col-sm-6">
-              <select class="form-control"
-                      [(ngModel)]="model.stage" name="stage"
-              >
-                <option *ngFor="let stage of stages" [value]="stage">{{stage}}</option>
-
-              </select>
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Time Frame</label>
-
-            <div class="nav col-sm-3">
-              <div class="col-sm-3 control-label">
-                from
-              </div>
-              <div class="col-sm-9">
-
-                <input type="text" class="form-control " required="" placeholder=""
-                       [(ngModel)]="model.fromDate" name="start_time" ng2-datetime-picker
-                >
-              </div>
-            </div>
-
-
-            <div class=" nav col-sm-3">
-              <div class="col-sm-3 control-label">
-                to
-              </div>
-              <div class="col-sm-9">
-
-                <input type="text" class="form-control " required="" placeholder=""
-                       [(ngModel)]="model.toDate" name="end_time" ng2-datetime-picker
-                >
-              </div>
-
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Contact</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" required="" placeholder=""
-                     [(ngModel)]="model.contact" name="contact"
-              >
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label col-ineedhelp"><i class="fa fa-hourglass-o" aria-hidden="true"></i>
-              I need help</label>
-            <div class="col-sm-6">
-              <textarea class="form-control" [(ngModel)]="model.help" name="i_need_help"
-              ></textarea>
-            </div>
-
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-6">
-
-              <tr *ngFor="let item of uploader.queue" class="col-sm-12  ">
-                <td class="col-sm-6"><strong>{{ item?.file?.name }}</strong></td>
-
-                <!--<td class="text-center col-sm-1">-->
-                <!--<span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>-->
-                <!--<span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>-->
-                <!--<span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>-->
-                <!--</td>-->
-                <td nowrap class="col-sm-4">
-                  <button type="button" class="btn btn-warning btn-xs"
-                          (click)="item.cancel()" [disabled]="!item.isUploading">
-                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
-                  </button>
-                  <button type="button" class="btn btn-danger btn-xs"
-                          (click)="item.remove()">
-                    <span class="glyphicon glyphicon-trash"></span> Remove
-                  </button>
-                </td>
-                <td>
-
-                </td>
-              </tr>
-            </div>
-
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-6">
-              <div class="progress" style="">
-                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-
-            <div class="col-sm-offset-3 col-sm-6">
-              <div ng2FileDrop
-                   [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
-                   (fileOver)="fileOverAnother($event)"
-                   [uploader]="uploader"
-                   class="well my-drop-zone" style="">
-                upload
-                <input class="fileInput well my-drop-zone col-sm-12" type="file"
-                       ng2FileSelect [uploader]="uploader" multiple
-                       (change)="selectedFileOnChanged($event)"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-6">
-              <button type="submit" class="btn btn-info btn-lg"
-                      [disabled]="siteForm.form.valid">Submit
-              </button>
-            </div>
-          </div>
-          <!--{{submitJson}}-->
-        </form>
+        </div>
       </div>
     </div>
   </div>
-  <!--<datetime [(ngModel)]="date4" [timepicker]="{ icon: 'fa fa-clock-o' }" [datepicker]="{ icon: 'fa fa-calendar' }"></datetime>-->
-  <!--&lt;!&ndash;<div>&ndash;&gt;-->
-    <!--<pre class="card card-block card-header">Selected date is: <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>-->
-    <!--<h4>Inline</h4>-->
-    <!--<div style="display:inline-block; min-height:290px;">-->
-      <!--<datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled"></datepicker>-->
-    <!--</div>-->
-    <!--<hr />-->
-    <!--<button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>-->
-    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="d20090824();">2009-08-24</button>-->
-    <!--<button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>-->
-    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="toggleMin()" tooltip="After today restriction">Min date</button>-->
-    <!--<button type="button" class="btn btn-sm btn-default btn-secondary" (click)="disableTomorrow()">Disable Tomorrow</button>-->
-  <!--</div>-->
+
 </div>
 
-<style>
-  .full button span {
-    background-color: limegreen;
-    border-radius: 32px;
-    color: black;
-  }
-  .partially button span {
-    background-color: orange;
-    border-radius: 32px;
-    color: black;
-  }
-</style>
+
+
 
 

@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit {
           this.pagedList.hasNextPage = nextPagedList.hasNextPage;
           this.pagedList.firstPage = nextPagedList.firstPage;
           this.pagedList.lastPage = nextPagedList.lastPage;
-          console.log(this.pagedList);
         }
       );
   }

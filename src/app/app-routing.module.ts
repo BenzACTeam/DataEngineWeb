@@ -1,6 +1,7 @@
 /**
  * Created by paulliu on 2016/12/7.
  */
+
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: 'test',  component: TestComponent },
   { path: 'edit',  component: EditCaseComponent },
   { path: 'user/:id',  component: UserComponent },
-  { path: 'search/:id',  component: ListSearchComponent },
-  { path: 'usermore/:id',  component: UserMoreComponent }
+  { path: 'search/:type',  component: ListSearchComponent },
+  { path: 'usermore/:createdcase',  component: UserMoreComponent }
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@
       </li>
       <li class="hidden-xs hidden-sm">
         <input type="text" class="search" placeholder="Search...">
-        <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
+        <button type="submit" class="btn btn-sm btn-search" [routerLink]="['/search', 1]"><i class="fa fa-search"></i>
         </button>
       </li>
     </ul>
@@ -97,13 +97,13 @@
           </a>
         </accordion-heading>
         <a routerLink="/createcase" routerLinkActive="active">
-          Detail
+          Increase business revenue
         </a>
         <a routerLink="/createcase3" routerLinkActive="active">
-          Detail
+          Optimize business eficiency
         </a>
         <a routerLink="/createcase4" routerLinkActive="active">
-          Detail
+          Operation KPI Tracking
         </a>
       </accordion-group>
       <accordion-group>
@@ -113,13 +113,16 @@
           </a>
         </accordion-heading>
         <a routerLink="/createcase5" routerLinkActive="active">
-          Detail
+          Scales
         </a>
         <a routerLink="/createcase6" routerLinkActive="active">
-          Detail
+          After sales
         </a>
         <a routerLink="/createcase7" routerLinkActive="active">
-          Detail
+          Marketing
+        </a>
+        <a routerLink="/createcase7" routerLinkActive="active">
+          Network Development
         </a>
       </accordion-group>
     </accordion>
